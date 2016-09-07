@@ -1,0 +1,23 @@
+---
+layout: page
+title: About | MSBU Tech
+head: MSBU Tech
+type: about
+---
+
+我们是 MSBU Tech!
+
+## 我们的成员
+
+* [haharazer](https://github.com/haharazer){:target="_blank"}
+* [布道希](https://github.com/regrex){:target="_blank"}
+* [影魔](https://github.com/hzphust){:target="_blank"}
+* ...
+
+## 协作者
+
+全体 MSBU 研发同学。
+
+## 加入我们
+
+请直接联系以上成员。

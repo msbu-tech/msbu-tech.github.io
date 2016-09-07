@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="page-title">
+MSBU Tech Weekly
+</div>
+<div id="date">
+{{ page.date | date:"%Y/%m/%d" }}
+</div>
+{% for article in site.data[page.datasrc].articles %}
+<div class="article">
+  <div class="article-title">
+    <a href="{{ article.link}}" target="_blank">{{ article.title }}</a>
+  </div>
+  <div class="article-tags">
+    {% for tag in article.tags %}
+      <div class="tag-item">{{ tag }}</div>
+    {% endfor %}
+  </div>
+  <div class="article-comment">{{ article.comment }}</div>
+</div>
+{% endfor %}

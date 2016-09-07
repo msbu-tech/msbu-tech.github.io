@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/zenburn.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/opensans.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <nav>
+        <div id="head">
+          <a href="/">MSBU Tech</a>
+        </div>
+        <div id="menu">
+          <div class="menu-item {% if page.type == "index" %}{{ "menu-active" }}{% endif %}">
+            <a href="/">首页</a>
+          </div>
+          <div class="menu-item {% if page.type == "weekly" %}{{ "menu-active" }}{% endif %}">
+            <a href="/weekly/">技术周刊</a>
+          </div>
+          <div class="menu-item {% if page.type == "share" %}{{ "menu-active" }}{% endif %}">
+            <a href="">技术分享</a>
+          </div>
+          <div class="menu-item {% if page.type == "project" %}{{ "menu-active" }}{% endif %}">
+            <a href="">项目</a>
+          </div>
+          <div class="menu-item {% if page.type == "blog" %}{{ "menu-active" }}{% endif %}">
+            <a href="/blog/">博客</a>
+          </div>
+          <div class="menu-item {% if page.type == "about" %}{{ "menu-active" }}{% endif %}">
+            <a href="/about.html">关于</a>
+          </div>
+        </div>
+      </nav>
+      <div id="content">
+        {{ content }}
+      </div>
+      <footer>
+        MSBU Tech &copy; 2016.
+      </footer>
+    </div>
+  </body>
+</html>

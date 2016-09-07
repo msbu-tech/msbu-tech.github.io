@@ -1,18 +1,21 @@
 ---
 layout: page
-title: Weekly | MSBU Tech
-head: MSBU Tech Weekly
-type: weekly
+title: Blog | MSBU Tech
+head: MSBU Tech Blog
+type: blog
 ---
 <div class="article">
 {% for post in site.posts %}
-  {% if post.layout == "weekly" %}
+  {% if post.layout == "blog" %}
   <div class="article-item">
     <div class="article-date">
       {{ post.date | date: "%Y/%m/%d" }}
     </div>
     <div class="article-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">业内技术周刊</a>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title}}</a>
+    </div>
+    <div class="article-main">
+      {{ post.excerpt }}
     </div>
   </div>
   {% endif %}
