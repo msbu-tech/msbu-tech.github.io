@@ -10,8 +10,11 @@ type: about
 ## 我们的成员
 
 * [haharazer](https://github.com/haharazer){:target="_blank"}
+* [David Zhang](https://github.com/crispgm){:target="_blank"}
 * [布道希](https://github.com/regrex){:target="_blank"}
 * [影魔](https://github.com/hzphust){:target="_blank"}
+* [Richard](https://github.com/RichardJing){:target="_blank"}
+* [LangJun](https://github.com/langjun){:target="_blank"}
 * ...
 
 ## 协作者
