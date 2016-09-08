@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About | MSBU Tech
+title: 关于 | MSBU Tech
 head: MSBU Tech
 type: about
 ---
