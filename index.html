@@ -4,4 +4,63 @@ title: Home | MSBU Tech
 head: MSBU Tech
 type: index
 ---
-Welcome here!
+<div class="article">
+  <div class="page-title">
+    技术周刊
+  </div>
+{% for post in site.posts limit:5 %}
+  {% if post.layout == "weekly" %}
+  <div class="article-item">
+    <div class="article-date">
+      {{ post.date | date: "%Y/%m/%d" }}
+    </div>
+    <div class="article-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">业内技术周刊</a>
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+</div>
+<div class="article">
+  <div class="page-title">
+    技术分享
+  </div>
+  <div class="article-item">
+    <div class="article-title">
+      暂无。
+    </div>
+  </div>
+</div>
+<div class="article">
+  <div class="page-title">
+    博客
+  </div>
+{% for post in site.posts limit:5 %}
+  {% if post.layout == "blog" %}
+  <div class="article-item">
+    <div class="article-date">
+      {{ post.date | date: "%Y/%m/%d" }}
+    </div>
+    <div class="article-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title}}</a>
+    </div>
+    <div class="article-main">
+      {{ post.excerpt }}
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+</div>
+<div class="article">
+  <div class="page-title">
+    项目
+  </div>
+  <div class="article-item">
+    <div class="article-title">
+      <a href="https://github.com/msbu-tech/wundercafe">Wunder Cafe</a>
+    </div>
+    <div class="article-comment">
+      Sync Wunderlist with New iCafe and control via task comment 
+    </div>
+  </div>
+</div>	

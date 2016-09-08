@@ -5,6 +5,12 @@ head: MSBU Tech Weekly
 type: weekly
 ---
 <div class="article">
+  <div id="rss">
+    <i class="fa fa-rss-square" aria-hidden="true"></i>
+    <a href="/weekly/feed.xml" target="_blank">
+      订阅 MSBU Tech 业内技术周刊
+    </a>
+  </div>
 {% for post in site.posts %}
   {% if post.layout == "weekly" %}
   <div class="article-item">

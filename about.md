@@ -5,7 +5,16 @@ head: MSBU Tech
 type: about
 ---
 
-我们是 MSBU Tech!
+## 我们是 MSBU Tech!
+
+<i class="fa fa-rss-square" aria-hidden="true"></i>
+<a href="/weekly/feed.xml" target="_blank">
+  订阅 MSBU Tech 业内技术周刊
+</a>
+<i class="fa fa-rss-square" aria-hidden="true"></i>
+<a href="/blog/feed.xml" target="_blank">
+  订阅 MSBU Tech 博客
+</a>
 
 ## 我们的成员
 

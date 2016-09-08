@@ -5,6 +5,12 @@ head: MSBU Tech Blog
 type: blog
 ---
 <div class="article">
+  <div id="rss">
+    <i class="fa fa-rss-square" aria-hidden="true"></i>
+    <a href="/blog/feed.xml" target="_blank">
+      订阅 MSBU Tech 博客
+    </a>
+  </div>
 {% for post in site.posts %}
   {% if post.layout == "blog" %}
   <div class="article-item">

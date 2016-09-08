@@ -88,6 +88,11 @@ nav{
   text-align: center;
   font-size: 2rem;
 }
+#rss {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
 .article {
   margin-top: 1rem;
   padding-bottom: 1rem;
