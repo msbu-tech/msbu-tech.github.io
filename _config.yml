@@ -3,3 +3,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Rakefile
+  - LICENSE
+  - README.md
