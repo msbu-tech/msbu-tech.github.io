@@ -9,11 +9,11 @@ type: about
 
 <i class="fa fa-rss-square" aria-hidden="true"></i>
 <a href="/weekly/feed.xml" target="_blank">
-  订阅 MSBU Tech 业内技术周刊
+  订阅技术周刊
 </a>
 <i class="fa fa-rss-square" aria-hidden="true"></i>
 <a href="/blog/feed.xml" target="_blank">
-  订阅 MSBU Tech 博客
+  订阅博客
 </a>
 
 ## 我们的成员
