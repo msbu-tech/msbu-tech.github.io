@@ -25,11 +25,19 @@ type: index
   <div class="page-title">
     分享
   </div>
+  {% for share in site.data.share %}
   <div class="article-item">
+    <div class="article-date">
+      {{ share.date }}
+    </div>
     <div class="article-title">
-      暂无。
+      <a href="{{ share.link }}" target="_blank">{{ share.title}}</a>
+    </div>
+    <div class="article-comment">
+      分享人: {{ share.person }}
     </div>
   </div>
+{% endfor %}
 </div>
 <div class="article">
   <div class="page-title">
