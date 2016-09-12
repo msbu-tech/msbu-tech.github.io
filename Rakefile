@@ -16,3 +16,7 @@ task :draft do
   sh "bundle exec jekyll serve --draft"
 end
 
+desc "Serve with future"
+task :future do
+  sh "bundle exec jekyll serve --future"
+end
