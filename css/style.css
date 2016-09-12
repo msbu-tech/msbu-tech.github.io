@@ -22,7 +22,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: navy;
+  color: darkred;
   font-weight: bold;
 }
 a:hover {
