@@ -71,6 +71,9 @@ nav{
 .menu-item a {
   text-decoration: none;
 }
+.menu-item a:hover {
+  color: black;
+}
 .menu-active a {
   color: black;
   text-decoration: none;
