@@ -54,6 +54,8 @@ nav{
   font-size: 1rem;
 }
 /* Menu */
+#head {
+}
 #menu {
   display: flex;
   margin-left: 10px;
@@ -61,12 +63,6 @@ nav{
 .menu-item {
   padding-left: 0.4rem;
   text-align: center;
-}
-@media (max-width: 48rem) {
-  .menu-item {
-    padding-left: .5rem;
-    padding-right: .5rem;
-  }
 }
 .menu-item a {
   text-decoration: none;
@@ -78,7 +74,22 @@ nav{
   color: black;
   text-decoration: none;
 }
-#head {
+@media (max-width: 48rem) {
+  nav {
+    display: block;
+  }
+  #head {
+    font-size: 2rem;
+    text-align: left;
+    padding-left: .25rem;
+    margin-bottom: 1rem;
+  }
+  #menu {
+    margin-left: 0;
+  }
+  .menu-item {
+    padding-right: 1rem;
+  }
 }
 #date {
   text-align: center;
