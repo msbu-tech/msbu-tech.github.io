@@ -31,7 +31,7 @@ type: index
       {{ share.date }}
     </div>
     <div class="article-title">
-      <a href="{{ share.link }}" target="_blank">{{ share.title}}</a>
+      <a href="{{ share.link }}" target="_blank">{{ share.title }}</a>
     </div>
     <div class="article-comment">
       分享人: {{ share.person }}
@@ -63,12 +63,14 @@ type: index
   <div class="page-title">
     项目
   </div>
+  {% for project in site.data.project %}
   <div class="article-item">
     <div class="article-title">
-      <a href="https://github.com/msbu-tech/wundercafe">Wunder Cafe</a>
+      <a href="{{ project.link }}">{{ project.name }}</a>
     </div>
     <div class="article-comment">
-      Sync Wunderlist with New iCafe and control via task comment 
+      {{ project.intro }}
     </div>
   </div>
+  {% endfor %}
 </div>	
