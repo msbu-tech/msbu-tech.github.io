@@ -22,8 +22,9 @@ type: about
 * [David Zhang](https://github.com/crispgm){:target="_blank"}
 * [布道希](https://github.com/regrex){:target="_blank"}
 * [影魔](https://github.com/hzphust){:target="_blank"}
-* [Richard](https://github.com/RichardJing){:target="_blank"}
-* [LangJun](https://github.com/langjun){:target="_blank"}
+* [Raphael Liu](https://github.com/raphael-liu)
+* [Richard Jing](https://github.com/RichardJing){:target="_blank"}
+* [Lang Jun](https://github.com/langjun){:target="_blank"}
 * ...
 
 ## 协作者
