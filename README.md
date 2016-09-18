@@ -1,3 +1,3 @@
 # Official Github Pages of MSBU Tech Team
 
-Built with Jekyll, and it's still under developing.
+[![](https://img.shields.io/badge/powered%20by-jekyll-red.svg)](https://jekyllrb.com)
