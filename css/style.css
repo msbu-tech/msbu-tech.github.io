@@ -12,7 +12,7 @@ html {
 }
 body {
   margin: 0;
-  font-family: "Open Sans", "Hiragino Sans GB", "Microsoft Yahei", Helvetica, Arial, Courier, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, "Microsoft Yahei",sans-serif;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   color: #333;
