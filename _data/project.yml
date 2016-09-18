@@ -1,3 +1,6 @@
+- name:  "go-sf"
+  link:  "https://github.com/msbu-tech/go-sf"
+  intro: "Service Framework generator in Go"
 - name:  "Wunder Cafe"
   link:  "https://github.com/msbu-tech/wundercafe"
-  intro: "Sync Wunderlist with New iCafe and control via task comment "
+  intro: "Sync Wunderlist with New iCafe and control via task comment."
