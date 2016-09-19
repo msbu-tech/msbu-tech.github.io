@@ -23,6 +23,7 @@ type: about
 * [布道希](https://github.com/regrex){:target="_blank"}
 * [影魔](https://github.com/hzphust){:target="_blank"}
 * [Raphael Liu](https://github.com/raphael-liu)
+* [EverThis](https://github.com/everthis)
 * [Richard Jing](https://github.com/RichardJing){:target="_blank"}
 * [Lang Jun](https://github.com/langjun){:target="_blank"}
 * ...
