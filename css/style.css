@@ -115,7 +115,6 @@ nav{
 }
 .article-item {
   margin-top: .5rem;
-  overflow: auto; /* clearfix */
 }
 .article-year {
   margin-top: 2rem;
@@ -131,7 +130,7 @@ nav{
     margin-left: 1rem;
   }
   .article-item {
-    margin-top: 0;
+    margin-top: .5rem;
   }
 }
 .article-comment {
