@@ -3,7 +3,7 @@ articles:
     link:    "http://www.cnblogs.com/vajoy/p/5341664.html"
     comment: "非常详细的讲解了各代 http 协议和浏览器对缓存的处理和定义，以及协议的变迁，值得仔细阅读。"
     tags:   ["协议", "HTTP"]
-  - title:   "关于字符编码，你所需要知道的（ASCII,Unicode,Utf-8,GB2312…）"
+  - title:   "关于字符编码，你所需要知道的（ASCII, Unicode, Utf-8, GB2312…）"
     link:    "http://www.imkevinyang.com/2010/06/%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%EF%BC%8C%E4%BD%A0%E6%89%80%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84.html"
     comment: "一篇非常详细的讲解编码的文章，供大家参考。"
     tags:   ["编码"]
@@ -33,8 +33,13 @@ articles:
     tags:   ["MySQL", "InnoDB", "事务"]
   - title:   "Vim 8.0 正式发布"
     link:    "https://www.oschina.net/news/77059/vim-8-0-stable"
+    comment: "经过十多年，Vim 又发布了一个新的主要版本。它给你带来了很多有趣的新功能，例如 Channels, JSON, Jobs, Timers, Partials, Lambdas, Closures, 包管理等等。测试覆盖率一直在增加，许多错误已经被修复，这是一个稳定的版本。"
     tags:   ["vim", "工具"]
   - title:   "Uber技术栈全解析之上篇：基础"
     link:    "http://www.infoq.com/cn/articles/analytic-uber-technology-stack-part01"
     comment: "Uber 简单的 APP UI 的背后，是数百个互相依赖的微服务支撑的。本文从平台层、开发部署、语言、测试等方面介绍了 Uber 的技术栈。其中，Uber 的可视化框架和地图 ETA 算法的成果让人印象深刻。"
     tags:   ["Uber"]
+  - title:   "前后端分离架构下 CSRF 防御机制"
+    link:    "http://feclub.cn/post/content/koa-grace-csrf"
+    comment: "CSRF 是一种常见的攻击方式，在前后端分离的开发模式下，我们该如何优雅的防御呢？"
+    tags:   ["安全", "CSRF"]
