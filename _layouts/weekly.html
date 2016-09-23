@@ -17,6 +17,13 @@ MSBU Tech 技术周刊
       <div class="tag-item">{{ tag }}</div>
     {% endfor %}
   </div>
-  <div class="article-comment">{{ article.comment }}</div>
+  {% if article.comment %}
+    <div class="article-comment">
+      {% if article.referrer %}
+        {{ article.referrer | append: ": " }}
+      {% endif %}
+      {{ article.comment }}
+    </div>
+  {% endif %}
 </div>
 {% endfor %}

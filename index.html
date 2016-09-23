@@ -8,7 +8,7 @@ type: index
   <div class="page-title">
     周刊
   </div>
-{% for post in site.posts limit:5 %}
+{% for post in site.posts %}
   {% if post.layout == "weekly" %}
   <div class="article-item">
     <div class="article-date">
@@ -43,7 +43,7 @@ type: index
   <div class="page-title">
     博客
   </div>
-{% for post in site.posts limit:5 %}
+{% for post in site.posts %}
   {% if post.layout == "blog" %}
   <div class="article-item">
     <div class="article-date">
