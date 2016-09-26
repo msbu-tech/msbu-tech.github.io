@@ -12,10 +12,10 @@ html {
 }
 body {
   margin: 0;
-  font-family: "Open Sans", Helvetica, Arial, "Microsoft Yahei",sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", "Microsoft Yahei",sans-serif;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
-  color: #333;
+  color: #222;
   word-wrap: break-word;
   text-align: center;
   height: 100%;
@@ -23,7 +23,6 @@ body {
 a {
   text-decoration: none;
   color: darkred;
-  font-weight: bold;
 }
 a:hover {
   text-decoration: underline;
