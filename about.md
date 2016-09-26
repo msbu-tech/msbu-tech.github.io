@@ -9,7 +9,7 @@ type: about
 关于
 </div>
 
-## 我们是 MSBU Tech!
+# 我们是 MSBU Tech!
 
 <i class="fa fa-rss-square" aria-hidden="true"></i>
 <a href="/weekly/feed.xml" target="_blank">
@@ -39,3 +39,5 @@ type: about
 ## 加入我们
 
 请直接联系以上成员。
+
+<hr>
