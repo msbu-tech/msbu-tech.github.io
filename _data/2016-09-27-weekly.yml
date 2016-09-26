@@ -1,4 +1,9 @@
 articles:
+  - title:    "性感的 PHP —— 现代化 PHP 开发"
+    link:     "https://oddgb63aa.qnssl.com/uploads/2016/08/modern-php.pdf"
+    comment:  "本次技术分享主要讲了一些现代化 PHP 开发的技术，PPT 重点介绍了命名空间，闭包，匿名函数，Traits 这些新特性，以及介绍了 Composer 依赖包管理器和 PSR 规范。"
+    referrer: "David Zhang"
+    tags:    ["PHP", "ppt"]
   - title:    "Git 发布 2.10 - Push、Worktree、格式等得到了改进"
     link:     "http://www.infoq.com/cn/news/2016/09/git-210-released"
     tags:    ["新闻", "Git"]
