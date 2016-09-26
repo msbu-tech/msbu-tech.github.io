@@ -5,6 +5,10 @@ head: MSBU Tech
 type: about
 ---
 
+<div class="page-title">
+关于
+</div>
+
 ## 我们是 MSBU Tech!
 
 <i class="fa fa-rss-square" aria-hidden="true"></i>
