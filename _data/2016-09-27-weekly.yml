@@ -1,18 +1,14 @@
 articles:
+  - title:    "每秒订单数25倍提升，蘑菇街怎样跨过海量服务架构的技术藩篱？"
+    link:     "http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650994245&idx=1&sn=84b01bdd571d51586a87ba05120c3176&chksm=bdbf0e168ac88700b55abdd24c756152dd3f54a7433cd19b05d3ef083223affe9f5dfd1ae14c&mpshare=1&scene=1&srcid=0927FCbVVd08uMoTgDk0vMdB#rd"
+    comment:  "这篇文章内容，既有总体框架，又有实施细节。结合我们当前的业务和我们正在实施的架构改造，大家可以从文中收获很多养分。"
+    referrer: "路人贾"
+    tags:    ["服务架构", "电商"]
   - title:    "性感的 PHP —— 现代化 PHP 开发"
     link:     "https://oddgb63aa.qnssl.com/uploads/2016/08/modern-php.pdf"
     comment:  "本次技术分享主要讲了一些现代化 PHP 开发的技术，PPT 重点介绍了命名空间，闭包，匿名函数，Traits 这些新特性，以及介绍了 Composer 依赖包管理器和 PSR 规范。"
     referrer: "David Zhang"
     tags:    ["PHP", "ppt"]
-  - title:    "Git 发布 2.10 - Push、Worktree、格式等得到了改进"
-    link:     "http://www.infoq.com/cn/news/2016/09/git-210-released"
-    tags:    ["新闻", "Git"]
-  - title:    "TypeScript 2.0 正式发布"
-    link:     "http://www.infoq.com/cn/news/2016/09/typescript-release-20"
-    comment:  |
-      TypeScript 是微软开发的开源的编程语言，主要负责人是 C# 之父 Anders Hejlsberg。<br><br>
-      TypeScript 成功将 JavaScript 的潜能与静态类型结合了起来，而且编译为 JavaScript。编译时类型检查可以避免很多潜在的 Bug，而且 TypeScript 的编辑器工具也大大提升了开发效率。"
-    tags:    ["新闻", "JavaScript"]
   - title:    "分布式队列编程：从模型、实战到优化"
     link:     "http://www.infoq.com/cn/articles/distributed-queue-programme-model-actual-combat-optimization"
     referrer: "David Zhang"
@@ -48,3 +44,12 @@ articles:
     comment:  "打包，签名，测试，部署，发布，库管理等占用大量时间，这些重复工作应该自动化完成，节省人力。作者给出了实际工作中遇到的问题，并说明 Fastlane 在应对这些问题时的优势。对两个实际应用场景，给出了 Fastlane 解决方案。"
     referrer: "Richard Jing"
     tags:    ["移动", "流程", "自动化"]
+  - title:    "Git 发布 2.10 - Push、Worktree、格式等得到了改进"
+    link:     "http://www.infoq.com/cn/news/2016/09/git-210-released"
+    tags:    ["新闻", "Git"]
+  - title:    "TypeScript 2.0 正式发布"
+    link:     "http://www.infoq.com/cn/news/2016/09/typescript-release-20"
+    comment:  |
+      TypeScript 是微软开发的开源的编程语言，主要负责人是 C# 之父 Anders Hejlsberg。<br><br>
+      TypeScript 成功将 JavaScript 的潜能与静态类型结合了起来，而且编译为 JavaScript。编译时类型检查可以避免很多潜在的 Bug，而且 TypeScript 的编辑器工具也大大提升了开发效率。"
+    tags:    ["新闻", "JavaScript"]
