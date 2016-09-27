@@ -39,7 +39,7 @@ layout: nil
 <body>
   <h2>业内技术周刊</h2>
   <h4 class="date">{{ page.date | date:"%Y/%m/%d" }}</h4>
-  <h4 class="link"><a href="https://msbu-tech.github.io/{{ page.date | date:"%Y/%m/%d" }}/weekly.html">https://msbu-tech.github.io/2016/09/20/weekly.html</a> <a href="https://msbu-tech.github.io/weekly/feed.xml">订阅</a></h4>
+  <h4 class="link"><a href="https://msbu-tech.github.io/{{ page.date | date:"%Y/%m/%d" }}/weekly.html">https://msbu-tech.github.io/{{ page.date | date:"%Y/%m/%d" }}/weekly.html</a> <a href="https://msbu-tech.github.io/weekly/feed.xml">订阅</a></h4>
   
   {% for article in site.data[page.datasrc].articles %}
   <h4><a href="{{ article.link }}">{{ article.title }}</a></h4>
@@ -52,6 +52,6 @@ layout: nil
   <hr>
   {% endfor %}
 
-  <h4>MSBU Tech &copy; 2016. <a href="https://msbu-tech.github.io/2016/09/20/weekly.html">https://msbu-tech.github.io/2016/09/20/weekly.html</a></h4>
+  <h4>MSBU Tech &copy; {{ page.date | date:"%Y" }}. <a href="https://msbu-tech.github.io/{{ page.date | date:"%Y/%m/%d" }}/weekly.html">https://msbu-tech.github.io/{{ page.date | date:"%Y/%m/%d" }}/weekly.html</a></h4>
 </body>
 </html>
