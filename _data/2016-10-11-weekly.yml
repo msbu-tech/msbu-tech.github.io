@@ -1,0 +1,11 @@
+articles:
+  - title:    "Vue 2.0 来了！"
+    link:     "http://jiongks.name/blog/vue-2-is-here/"
+    comment:  ""
+    referrer: "David Zhang"
+    tags:    ["前端", "JavaScript", "Vue.js"]
+  - title:    "专访链家蔡白银：大数据如何解决房产领域痛点推动行业进步"
+    link:     "http://www.infoq.com/cn/news/2016/09/lianjia-big-data-House-property"
+    comment:  ""
+    referrer: "David Zhang"
+    tags:    ["大数据", "链家"]
