@@ -1,11 +1,36 @@
 articles:
   - title:    "Vue 2.0 来了！"
     link:     "http://jiongks.name/blog/vue-2-is-here/"
-    comment:  ""
-    referrer: "David Zhang"
+    comment:  "Vue 2.0 发布，带来了性能提升、Virtual DOM、服务端渲染以及配套的 vue-router、vuex、vue-loader 和 vueify 工具链的同步升级。"
+    referrer: "zhangwanlong"
     tags:    ["前端", "JavaScript", "Vue.js"]
   - title:    "专访链家蔡白银：大数据如何解决房产领域痛点推动行业进步"
     link:     "http://www.infoq.com/cn/news/2016/09/lianjia-big-data-House-property"
-    comment:  ""
-    referrer: "David Zhang"
+    comment:  "链家网大数据架构师，讲述了链家网大数据建设、架构和应用，解决了“房源真假如何判断”等痛点问题，推动行业进步。"
+    referrer: "zhangwanlong"
     tags:    ["大数据", "链家"]
+  - title:    "Fastlane 实战：Action 和 Plugin 机制"
+    link:     "http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112749&idx=1&sn=6e40ed0adba817fc7812a68d14ce83be"
+    comment:  "任何一个优秀的框架或平台都应当具有良好的扩展性，以满足不断变化的场景和个性化需求。移动开发过程中，需要自动化的场景太多，每个团队都有自己的特殊场景，这就需要自动化平台有良好的扩展能力。Fastlane 提供了 Action 来满足个性化需求，Plugin 让你可以在 RubyGems 上发布自己的插件。Fastlane 提供了大量模板，方便自定义 Action。本文介绍了创建 Action 和发布 Plugin 的步骤。"
+    referrer: "jingchao"
+    tags:    ["移动", "自动化"]
+  - title:    "iOS 开发中的『库』(一）"
+    link:     "https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework.md"
+    comment:  "只要做过 iOS 开发，肯定接触过动态库，但很多人对动态库没有清晰的认识。本文科普了静态库、动态库、.framwork 文件、.a 文件、Mach-O 等概念，介绍了利用 framework 进行热修复的方法。"
+    referrer: "jingchao"
+    tags:    ["iOS", "动态库"]
+  - title:    "熟悉的陌生人 - HTTP"
+    link:     "http://www.jianshu.com/p/99dc1f8f62bf"
+    comment:  "你最熟悉的HTTP协议，要了解更多还是要啃《TCP/IP详解》。"
+    referrer: "hanpeng03"
+    tags:    ["http", "协议"]
+  - title:    "Try Git: Git Tutorial"
+    link:     "https://try.github.io/"
+    comment:  "迎接 Git 工作流，奉上互动式 Git 学习网站，Code School 出品。"
+    referrer: "hanpeng03"
+    tags:    ["git"]
+  - title:    "猴子都能懂的GIT入门"
+    link:     "http://backlogtool.com/git-guide/cn/"
+    comment:  "当然，Git 教程中最通俗易懂的还属《猴子都能懂的GIT入门》。"
+    referrer: "hanpeng03"
+    tags:    ["git"]
