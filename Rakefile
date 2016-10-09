@@ -27,7 +27,7 @@ articles:
   - title:    "Your Awesome Article Title"
     link:     "https://msbu-tech.github.io/"
     comment:  "The reason why you recommend this article."
-    refferer: "Your Name"
+    referrer: "Your Name"
     tags:    ["tag"]
   EOF
 
