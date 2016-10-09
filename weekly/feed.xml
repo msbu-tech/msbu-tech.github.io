@@ -12,7 +12,6 @@ layout: null
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
     {% for post in site.posts limit:20 %}
-      {% if post.layout == "weekly" %}
       <item>
         <title>MSBU Tech 技术周刊 - {{ post.date | date: "%Y/%m/%d"}}</title>
         <description>{{ post.content | xml_escape }}</description>
@@ -20,7 +19,6 @@ layout: null
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
       </item>
-      {% endif %}
     {% endfor %}
   </channel>
 </rss>

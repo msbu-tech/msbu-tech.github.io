@@ -17,8 +17,8 @@ type: weekly
       订阅
     </a>
   </div>
-{% for post in site.posts %}
-  {% if post.layout == "weekly" %}
+{% assign sorted_weekly = site.weekly | reverse %}
+{% for post in sorted_weekly %}
   <div class="article-item">
     <div class="article-date">
       {{ post.date | date: "%Y/%m/%d" }}
@@ -27,6 +27,5 @@ type: weekly
       <a href="{{ site.baseurl }}{{ post.url }}">业内技术周刊</a>
     </div>
   </div>
-  {% endif %}
 {% endfor %}
 </div>
