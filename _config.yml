@@ -1,4 +1,24 @@
 baseurl: ""
+collections:
+  weekly:
+    output: true
+  weekly_email:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: weekly
+    values:
+      layout: weekly
+      title: MSBU Tech 技术周刊
+      head: MSBU Tech 技术周刊
+  - scope:
+      path: ""
+      type: weekly_email
+    values:
+      layout: weekly-email
+      title: MSBU Tech 技术周刊
+      head: MSBU Tech 技术周刊
 exclude:
   - Gemfile
   - Gemfile.lock
