@@ -139,6 +139,13 @@ nav{
 .article-comment {
   font-size: 0.8rem;
 }
+.article-referrer:hover {
+  text-decoration: underline;
+  cursor: default;
+}
+.article-referrer:after {
+  content: ":";
+}
 .article-tags {
   display: flex;
   flex-direction: row;
@@ -161,4 +168,5 @@ nav{
 }
 .tag-item:hover {
   font-weight: bold;
+  cursor: default;
 }
