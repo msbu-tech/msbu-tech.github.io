@@ -20,7 +20,7 @@ MSBU Tech 技术周刊
   {% if article.comment %}
     <div class="article-comment">
       {% if article.referrer %}
-        {{ article.referrer | append: ": " }}
+        <span class="article-referrer">{{ article.referrer}}</span>
       {% endif %}
       {{ article.comment }}
     </div>
