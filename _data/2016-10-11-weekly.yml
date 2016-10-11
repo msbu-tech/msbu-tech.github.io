@@ -24,6 +24,11 @@ articles:
     comment:  "你最熟悉的HTTP协议，要了解更多还是要啃《TCP/IP详解》。"
     referrer: "hanpeng03"
     tags:    ["http", "协议"]
+  - title:    "微服务那么热，创业公司怎么选用实践？"
+    link:     "http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650994360&idx=1&sn=dd2664e2db6bfc7427a4ea738899840e&chksm=bdbf0eeb8ac887fdd3019e907ead70c9b4b869cb4e38dfe70cfc56eb0499d4ac757d3c918d27&mpshare=1&scene=1&srcid=10113dnp3o79BvhCOuBxRcxV#rd"
+    comment:  "来自『创业公司』的微服务架构实践。"
+    referrer: "zhangwanlong"
+    tags:    ["微服务", "架构"]
   - title:    "Try Git: Git Tutorial"
     link:     "https://try.github.io/"
     comment:  "迎接 Git 工作流，奉上互动式 Git 学习网站，Code School 出品。"
