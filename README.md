@@ -4,6 +4,10 @@
 
 Official Github Pages of MSBU Tech Team.
 
+## 我想提交周刊
+
+[欢迎提交到最新的内容收集 Issue 中](https://github.com/msbu-tech/weekly/issues?q=is%3Aissue+is%3Aopen+label%3A%E6%94%B6%E9%9B%86%E4%B8%AD)。
+
 ## Installation
 
 1. Clone the repo
