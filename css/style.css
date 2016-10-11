@@ -148,6 +148,8 @@ nav{
 }
 .tag-item:before {
   content: "#";
+  font-size: 1rem;
+  font-weight: bold;
 }
 .tag-item {
   padding: .2rem;
