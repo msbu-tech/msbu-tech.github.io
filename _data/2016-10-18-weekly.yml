@@ -18,6 +18,18 @@ articles:
     comment:  "本文主要介绍在测试 React Native 应用中，什么是可用的。首先，本文在介绍如何进行测试之前解释了 React Native 的一些关键特征；其次，本文从单元、集成、功能测试三个角度对测试方法和框架进行分类，并为每一类提供了实例；最后，本文就如何使用流行的开源自动化测试框架来对功能型应用进行测试提供了一些简单实例。"
     referrer: "dengxi"
     tags:    ["ReactNative", "测试"]
+  - title:    "Strange Loop - IP Spoofing"
+    link:     "https://idea.popcount.org/2016-09-20-strange-loop---ip-spoofing/"
+    comment:  "具体介绍了 DDos 攻击的概念和 IP 伪造的方法，其中介绍的关于利用 Hilbert Curve 曲线描绘 IP 分布的方法值得学习。"
+    tags:    ["DDoS", "IP伪造"]
+  - title:    "如何用一款小工具大大加速 MySQL SQL 语句优化"
+    link:     "http://dbaplus.cn/news-21-687-1.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io"
+    comment:  "主要是里面可以看到很多 sql 语句优化的工具和参数分析，通过集成这些工具进行写成分析一个 sql 语句的优化工具。"
+    tags:    ["MySQL", "SQL", "优化"]
+  - title:    "验证码对抗之路及现有验证机制介绍"
+    link:     "http://www.cnblogs.com/alisecurity/p/5581049.html"
+    comment:  "介绍了现有验证码机制的一些算法和生成、验证方式。并给出了验证码的一些破解方法研究。"
+    tags:    ["验证码", "阿里移动安全"]
   - title:    "Facebook 发布了新的 Node 模块管理器 Yarn，或取代 npm 客户端"
     link:     "https://github.com/yarnpkg/yarn"
     comment:  "“在 Facebook 中，我们多年来一直在使用 npm 客户端并取得了成功，但随着代码仓库与团队人数的增长，我们在一致性、安全性以及性能方面遇到了挑战。在尝试解决每个方面的问题后，我们最终决定着手打造一套新的客户端解决方案，以帮助我们更可靠地管理依赖。我们把这个客户端工具称为 Yarn —— 更加快速、可靠、安全的 npm 客户端的替代品。”"
