@@ -13,6 +13,11 @@ articles:
     link:     "http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650994413&idx=1&sn=24a01089ee47793b5d82381b04a34499&chksm=bdbf0ebe8ac887a8a75a0cd9226bb7e0427f1a77c43323d14dc6932c7dc77555531bce5dce0f&mpshare=1&scene=1&srcid=1017DNMoAoV9TjGya9P9azPN#rd"
     comment:  "“分库分表”是谈论数据库架构和优化时经常听到的关键词。那么对于这些业务量正在高速增长的公司，它有那么容易实践吗？笔者整理了分库分表中可能遇到的一些问题，并结合以往经验介绍了对应的解决思路和建议。"
     tags:    ["数据库"]
+  - title:    "Laravel的核心概念"
+    link:     "https://lufficc.com/blog/the-core-conception-of-laravel"
+    referrer: "hanpeng03"
+    comment:  "感受一下现代化的 php 框架是怎么做的。"
+    tags:    ["PHP", "Laravel", "框架"]
   - title:    "十大性能方面的错误"
     link:     "http://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247483872&idx=1&sn=05311c74bfdda462dba899656401f191&chksm=e8d7fe22dfa07734d61edf70ee0841d994824e52186c38c3f7fc4e696116baeba3ca5173cf78#rd"
     referrer: "zhangwanlong"
