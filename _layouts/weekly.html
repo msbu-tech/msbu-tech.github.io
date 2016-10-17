@@ -8,7 +8,7 @@ MSBU Tech 技术周刊
 {{ page.date | date:"%Y/%m/%d" }}
 </div>
 {% for article in site.data[page.datasrc].articles %}
-<div class="article">
+<div id="i-article-{% increment i %}" class="article">
   <div class="article-title">
     <a href="{{ article.link}}" target="_blank">{{ article.title }}</a>
   </div>
