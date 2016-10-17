@@ -4,6 +4,11 @@ articles:
     referrer: "何老板"
     comment:  "一流的技术团队不是仅仅翻译需求，而是需要理解业务，然后根据业务去设计架构，让架构对业务有可伸缩性。"
     tags:    ["技术团队"]
+  - title:    "分布式会话跟踪系统架构设计与实践"
+    link:     "http://tech.meituan.com/mt-mtrace.html"
+    referrer: "hanpeng03"
+    comment:  "随着服务化的分布式系统越来越复杂，一套完善的会话跟踪机制就非常有必要，这篇文章较详细的介绍了美团在其微服务架构下是怎么做会话跟踪的。"
+    tags:    ["分布式", "会话追踪"]
   - title:    "分库分表的几种常见形式以及可能遇到的难题"
     link:     "http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650994413&idx=1&sn=24a01089ee47793b5d82381b04a34499&chksm=bdbf0ebe8ac887a8a75a0cd9226bb7e0427f1a77c43323d14dc6932c7dc77555531bce5dce0f&mpshare=1&scene=1&srcid=1017DNMoAoV9TjGya9P9azPN#rd"
     comment:  "“分库分表”是谈论数据库架构和优化时经常听到的关键词。那么对于这些业务量正在高速增长的公司，它有那么容易实践吗？笔者整理了分库分表中可能遇到的一些问题，并结合以往经验介绍了对应的解决思路和建议。"
@@ -23,7 +28,7 @@ articles:
     comment:  "具体介绍了 DDos 攻击的概念和 IP 伪造的方法，其中介绍的关于利用 Hilbert Curve 曲线描绘 IP 分布的方法值得学习。"
     tags:    ["DDoS", "IP伪造"]
   - title:    "如何用一款小工具大大加速 MySQL SQL 语句优化"
-    link:     "http://dbaplus.cn/news-21-687-1.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io"
+    link:     "http://dbaplus.cn/news-21-687-1.html"
     comment:  "主要是里面可以看到很多 sql 语句优化的工具和参数分析，通过集成这些工具进行写成分析一个 sql 语句的优化工具。"
     tags:    ["MySQL", "SQL", "优化"]
   - title:    "验证码对抗之路及现有验证机制介绍"
