@@ -119,6 +119,12 @@ nav{
 .article-item {
   margin-top: .5rem;
 }
+.article-share {
+  display: none;
+}
+.article-title:hover .article-share {
+  display: inline-block;
+}
 .article-year {
   margin-top: 2rem;
 }

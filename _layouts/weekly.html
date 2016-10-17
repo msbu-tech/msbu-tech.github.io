@@ -8,9 +8,14 @@ MSBU Tech 技术周刊
 {{ page.date | date:"%Y/%m/%d" }}
 </div>
 {% for article in site.data[page.datasrc].articles %}
-<div id="i-article-{% increment i %}" class="article">
+<div id="i-article-{{ forloop.index }}" class="article">
   <div class="article-title">
-    <a href="{{ article.link}}" target="_blank">{{ article.title }}</a>
+    <span><a href="{{ article.link}}" target="_blank">{{ article.title }}</a></span>
+    <span class="article-share">
+      <a href="#i-article-{{ forloop.index }}">
+        <i class="fa fa-paragraph"></i>
+      </a>
+    </span>
   </div>
   <div class="article-tags">
     {% for tag in article.tags %}
