@@ -83,12 +83,12 @@ nav{
   }
   #head {
     font-size: 2rem;
-    text-align: left;
     padding-left: .25rem;
     margin-bottom: 1rem;
   }
   #menu {
-    margin-left: 0;
+    display: flex;
+    justify-content: space-around;
   }
   .menu-item {
     padding-right: 1rem;
