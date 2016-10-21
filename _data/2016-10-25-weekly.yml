@@ -1,0 +1,40 @@
+articles:
+  - title:    "产品级微服务的八大原则"
+    link:     "http://colobu.com/2016/10/16/microservices-in-production-notes/"
+    comment:  ""
+    referrer: "hanpeng03"
+    tags:    ["微服务"]
+  - title:    "日请求超亿级、同时在线活动800+：QQ会员活动运营系统架构实践"
+    link:     "http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650994472&idx=1&sn=a36467e996836eb010333d54e06fd22d&chksm=bdbf0f7b8ac8866d0549a2a294755bb7ca83117902e9c3d551016c8eafb5403a444f35b0dc7e&mpshare=1&scene=1&srcid=1020BxtZbXJAhmm07d5gmZR2#rd"
+    comment:  "本文主要为你分享：QQ增值业务在海量请求下的技术挑战以及背景；Web系统高并发场景的综合优化策略；平台高可用的建设实践。"
+    tags:    ["QQ", "架构"]
+  - title:    "SQL Style Guide"
+    link:     "http://www.sqlstyle.guide/"
+    comment:  "不要不把 SQL 当作正规语言，这就是 SQL 的代码规范。"
+    referrer: "zhangwanlong"
+    tags:    ["SQL"]
+  - title:    "路由跳转的思考"
+    link:     "http://awhisper.github.io/2016/06/12/%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC%E7%9A%84%E6%80%9D%E8%80%83/"
+    comment:  "作者想要解决一个实际需求：各种页面跳转造成的引用耦合。在设计解决方案时，还要提前预知一些坑和风险，为未来业务扩展考虑。作者最终选择了URLRoute+中间人的混合方案，医疗的BMRouter也是这种思路。文章写得非常认真，每个方案的优缺点都详细列出。列出参考文章更是值得阅读。"
+    referrer: "jingchao"
+    tags:    ["引用依赖", "解耦", "URLRouter"]
+  - title:    "豆瓣的模块化实践"
+    link:     "http://lincode.github.io/Modularity"
+    comment:  "豆瓣 App 通过模块化，应对代码和功能不断扩张的挑战，使得各个业务模块互不干扰，可以独立开发。在模块化过程中，也产出了一些库和工具。"
+    referrer: "zhangwanlong"
+    tags:    ["app"]
+  - title:    "Redis 为什么用跳表而不用平衡树？"
+    link:     "http://gold.xitu.io/post/57fa935b0e3dd90057c50fbc"
+    comment:  "《Redis内部数据结构详解》之一，围绕一个Redis的内部数据结构——skiplist展开讨论。"
+    referrer: "zhangwanlong"
+    tags:    ["PHP", "hhvm"]
+  - title:    "Google 搜索结果正式 AMP 化"
+    link:     "https://www.oschina.net/news/78151/google-amp"
+    comment:  "AMP 介绍: <a href=\"https://imququ.com/post/amp-project.html\" target=\"_blank\">AMP，来自 Google 的移动页面优化方案</a>"
+    referrer: "hanpeng03"
+    tags:    ["AMP", "Google"]
+  - title:    "Optimizing Lua Applications for LuaJIT and OpenResty"
+    link:     "http://openresty.org/slides/Optimizing-Lua-Applications-for-LuaJIT-and-OpenResty.pdf"
+    comment:  "@agentzh 又一演讲 slide，主要内容是关于如何优化 LuaJIT 和 OpenResty。"
+    referrer: "zhangwanlong"
+    tags:    ["openresty", "lua"]
