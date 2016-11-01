@@ -4,6 +4,11 @@ articles:
     comment:  "性能、安全、生产力，对于Android N 的三大主题，已经陆陆续续的公开api，应用于各大手机品牌，项目组也是紧锣密鼓的把新特性应用以及适配于我们自己的项目，保证技术的最新性，在适配的同时，也踩平了许多不为人知的坑，今天我们就把探讨的东西作为Android N系列陆续发出，希望能帮助到需要的Android 开发者。"
     referrer: "dujie02"
     tags:    ["Android"]
+  - title:    "<b>『原创』插件化之DynamicLoadApk原理解析</b>"
+    link:     "http://www.jianshu.com/p/7c6fbe468c00"
+    comment:  "插件化之 DynamicLoadApk 原理解析。"
+    referrer: "limingwei01"
+    tags:    ["Android", "插件化", "DynamicLoadApk"]
   - title:    "研究谷歌和亚马逊的微服务案例，我们能学习到的经验"
     link:     "http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659598391&idx=1&sn=4dbfeadb217c89bf051168bbab56fda7&chksm=8be99525bc9e1c3398c6884bc7eed43580d2d70cbf36d5902e043d9ccb7a44d3979523eddca3&scene=0#wechat_redirect"
     comment:  "业界的微服务经验总结，比较全面，有不少点值得参考。"
