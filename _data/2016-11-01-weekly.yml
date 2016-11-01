@@ -1,7 +1,7 @@
 articles:
   - title:    "<b>『原创』Android N系列适配---Android 7.0适配</b>"
     link:     "http://www.jianshu.com/p/522d3e15f23e"
-    comment:  ""
+    comment:  "性能、安全、生产力，对于Android N 的三大主题，已经陆陆续续的公开api，应用于各大手机品牌，项目组也是紧锣密鼓的把新特性应用以及适配于我们自己的项目，保证技术的最新性，在适配的同时，也踩平了许多不为人知的坑，今天我们就把探讨的东西作为Android N系列陆续发出，希望能帮助到需要的Android 开发者。"
     referrer: "dujie02"
     tags:    ["Android"]
   - title:    "研究谷歌和亚马逊的微服务案例，我们能学习到的经验"
