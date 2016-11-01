@@ -1,4 +1,9 @@
 articles:
+  - title:    "<b>『原创』Android N系列适配---Android 7.0适配</b>"
+    link:     "http://www.jianshu.com/p/522d3e15f23e"
+    comment:  ""
+    referrer: "dujie02"
+    tags:    ["Android"]
   - title:    "研究谷歌和亚马逊的微服务案例，我们能学习到的经验"
     link:     "http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659598391&idx=1&sn=4dbfeadb217c89bf051168bbab56fda7&chksm=8be99525bc9e1c3398c6884bc7eed43580d2d70cbf36d5902e043d9ccb7a44d3979523eddca3&scene=0#wechat_redirect"
     comment:  "业界的微服务经验总结，比较全面，有不少点值得参考。"

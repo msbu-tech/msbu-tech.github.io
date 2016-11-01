@@ -4,6 +4,7 @@ title: 项目 | MSBU Tech
 head: MSBU Tech Weekly
 type: project
 ---
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 <div class="page-title">
   项目
 </div>
@@ -14,7 +15,20 @@ type: project
       <a href="{{ project.link }}">{{ project.name }}</a>
     </div>
     <div class="article-comment">
+      <p>
       {{ project.intro }}
+      </p>
+    </div>
+    <div class="article-main">
+      <p>
+        <a class="github-button"
+           href="https://github.com/{{ project.repo }}"
+           data-icon="octicon-star"
+           data-count-href="/{{ project.repo }}/stargazers"
+           data-count-api="/repos/{{ project.repo }}#stargazers_count"
+           data-count-aria-label="# stargazers on GitHub"
+           aria-label="Star {{ project.repo }} on GitHub">Star</a>
+      </p>
     </div>
   </div>
   {% endfor %}
