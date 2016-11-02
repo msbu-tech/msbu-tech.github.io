@@ -15,7 +15,18 @@ layout: null
     {% for post in sorted_weekly %}
       <item>
         <title>MSBU Tech 技术周刊 - {{ post.date | date: "%Y/%m/%d"}}</title>
-        <description>{{ post.content | xml_escape }}</description>
+        {% capture content %}
+        {% for item in site.data[post.datasrc].articles %}
+        <h2>{{ item.title }}</h2>
+        <div>
+        {% for tag in item.tags %}
+          #{{ tag }}&nbsp;
+        {% endfor %}
+        </div>
+        <p>{{ item.comment }}</p>
+        {% endfor %}
+        {% endcapture %}
+        <description>{{ content | xml_escape }}</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
