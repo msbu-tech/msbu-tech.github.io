@@ -1,0 +1,45 @@
+articles:
+  - title:    "Airbnb是如何监控用户提出的大量问题的？"
+    link:     "http://www.infoq.com/cn/articles/how-Airbnb-monitorissues-raised-by-users"
+    comment:  ""
+    referrer: "zhangwanlong"
+    tags:    ["Airbnb", "舆情"]
+  - title:    "Netflix的工程权衡和API重构"
+    link:     "http://www.infoq.com/cn/articles/engineering-tradeoffs-of-netflix-and-api-reconstruction"
+    comment:  ""
+    referrer: "zhangwanlong"
+    tags:    ["Netflix", "API", "重构"]
+  - title:    "iOS 安装包瘦身指南"
+    link:     "http://www.zoomfeng.com/blog/ipa-size-thin.html"
+    comment:  "迄今为止最详细的 App 瘦身指南。从资源文件、编译选项、无语代码等方面介绍 App 瘦身方法，推荐了一些实用工具。给出的参考文章也很值得阅读。"
+    referrer: "jingchao"
+    tags:    ["iOS", "包优化"]
+  - title:    "QCon上海参会感"
+    link:     "http://www.infoq.com/cn/articles/engineering-tradeoffs-of-netflix-and-api-reconstruction"
+    comment:  "简单介绍了10月份 QCon 大会各演讲题目，主题集中在混合开发技术和热更新技术。详细内容请到文章给出的链接中下载 PPT。"
+    referrer: "jingchao"
+    tags:    ["移动", "QCon"]
+  - title:    "The Web Is Not Tomorrow But Today"
+    link:     "https://blog.jscrambler.com/the-web-is-not-tomorrow-but-today/"
+    comment:  ""
+    referrer: "langjun"
+    tags:    [""]
+  - title:    "验证码的前世今生（前世篇）"
+    link:     "http://jaq.alibaba.com/community/art/show?spm=a313e.7916648.0.0.IXY6dR&articleid=548"
+    comment:  ""
+    referrer: "zhangwanlong"
+    tags:    ["验证码"]
+  - title:    "验证码的前世今生（今生篇）"
+    link:     "http://jaq.alibaba.com/community/art/show?spm=a313e.7916646.24000001.1.Slo21f&articleid=582"
+    comment:  ""
+    referrer: "langjun"
+    tags:    ["验证码"]
+  - title:    "开源搜索引擎 ElasticSearch 5.0 版本正式发布"
+    link:     "http://www.infoq.com/cn/news/2016/11/Elasticsearch-5-0-publish"
+    comment:  "近日，Elastic 在官方博客中宣布，ElasticSearch 5.0正式发布。该版本基于 Lucene 6.2.0，已经在 Elastic Cloud 上完成了部署。据称，这是迄今为止最快、最安全、最易用的版本。"
+    tags:    ["ElasticSearch", "news"]
+  - title:    "2017，Rust将何去何从？"
+    link:     "http://www.infoq.com/cn/news/2016/11/2017-rust-roadmap"
+    comment:  "Rust 是由 Mozilla 推出的一款通用语言，热门程度仅次于 Go，具有安全、高并发等特点。"
+    referrer: "zhangwanlong"
+    tags:    ["Rust"]
