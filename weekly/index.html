@@ -7,27 +7,29 @@ type: weekly
 <div class="page-title">
   周刊
 </div>
-<div id="rss">
+<div class="article info">
+  MSBU Tech 技术周刊，（通常）每周五发布预览版，第二周周二正式发布，节假日除外。
   <i class="fa fa-rss-square" aria-hidden="true"></i>
   <a href="/weekly/feed.xml" target="_blank">
     订阅
   </a>
 </div>
-<p>
-  MSBU Tech 技术周刊，（通常）每周五发布预览版，第二周周二正式发布，节假日除外。
-</p>
 {% assign sorted_weekly = site.weekly | reverse %}
 {% for post in sorted_weekly %}
 <div class="article">
-  <a href="{{ site.baseurl }}{{ post.url }}">
   <div class="article-item">
     <div class="article-date">
       {{ post.date | date: "%Y/%m/%d" }}
     </div>
     <div class="article-title">
-      业内技术周刊
+      <a href="{{ site.baseurl }}{{ post.url }}">业内技术周刊</a>
+    </div>
+    <div class="article-comment">
+      {% for item in site.data[post.datasrc].articles limit:3 %}
+      <div>{{ item.title }}</div>
+      {% endfor %}
+      <div>...</div>
     </div>
   </div>
-  </a>
 </div>
 {% endfor %}

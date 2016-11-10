@@ -15,7 +15,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", "Microsoft Yahei",sans-serif;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
-  color: #222;
+  color: #393c40;
+  background-color: #f0f1f2;
   word-wrap: break-word;
   text-align: center;
   height: 100%;
@@ -23,7 +24,7 @@ body {
 h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
 a {
   text-decoration: none;
-  color: #4078c0;
+  color: #4a90e2;
 }
 a:hover {
   text-decoration: underline;
@@ -90,13 +91,14 @@ nav{
   text-align: center;
 }
 .menu-item a {
+  color: #757980;
   text-decoration: none;
 }
 .menu-item a:hover {
   color: black;
 }
 .menu-active a {
-  color: black;
+  color: #393c40;
   text-decoration: none;
 }
 @media (max-width: 48rem) {
@@ -127,24 +129,23 @@ nav{
   font-size: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 0.8rem;
-}
-#rss {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  color: #393c40;
 }
 .article {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   padding: 1rem;
-  background: #fbfbfb;
+  background-color: #f7f8fa;
   box-shadow: 0 .1rem .4rem 0 #ddd;
 }
 .article-item {
-  margin-top: .5rem;
+  /*margin-top: .5rem;*/
 }
 .article-share {
   display: none;
+}
+.article-title {
+  color: #757980;
 }
 .article-title:hover .article-share {
   display: inline-block;
@@ -155,30 +156,19 @@ nav{
 .article-date {
   margin-top: 0;
   margin-bottom: 0;
-  color: #bbbbbb;
+  color: #b4b8bf;
 }
 .article-star {
   float: right;
   margin-left: 1rem;
 }
-@media (min-width: 48rem) {
-  .article-date {
-    float: right;
-    margin-left: 1rem;
-  }
-  .article-item {
-    margin-top: .5rem;
-  }
-}
 .article-comment {
-  font-size: 0.8rem;
+  margin-top: .4rem;
+  font-size: .9rem;
 }
 .article-referrer:hover {
   text-decoration: underline;
   cursor: default;
-}
-.article-referrer:after {
-  content: ":";
 }
 .article-tags {
   display: flex;
@@ -190,7 +180,6 @@ nav{
 .tag-item:before {
   content: "#";
   font-size: 1rem;
-  font-weight: bold;
 }
 .tag-item {
   padding: .2rem;
@@ -201,6 +190,30 @@ nav{
   justify-content: space-between;
 }
 .tag-item:hover {
-  font-weight: bold;
+  text-decoration: underline;
   cursor: default;
+}
+@media (min-width: 48rem) {
+  .article-date {
+    float: right;
+    margin-left: 1rem;
+  }
+  .article-item {
+    margin-top: .5rem;
+  }
+  .article-referrer {
+    float: right;
+  }
+}
+.info {
+  background-color: #6ec3b4;
+}
+.hint {
+  background-color: #facb5b;
+}
+.warning {
+  background-color: #e95260;
+}
+.info a {
+  color: #393c40;
 }

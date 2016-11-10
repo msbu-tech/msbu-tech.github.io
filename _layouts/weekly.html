@@ -9,6 +9,9 @@ MSBU Tech 技术周刊
 </div>
 {% for article in site.data[page.datasrc].articles %}
 <div id="i-article-{{ forloop.index }}" class="article">
+  {% if article.referrer %}
+  <div class="article-referrer">{{ article.referrer}}</div>
+  {% endif %}
   <div class="article-title">
     <span><a href="{{ article.link}}" target="_blank">{{ article.title }}</a></span>
     <span class="article-share">
@@ -24,9 +27,6 @@ MSBU Tech 技术周刊
   </div>
   {% if article.comment %}
     <div class="article-comment">
-      {% if article.referrer %}
-        <span class="article-referrer">{{ article.referrer}}</span>
-      {% endif %}
       {{ article.comment }}
     </div>
   {% endif %}
