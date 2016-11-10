@@ -1,0 +1,59 @@
+---
+layout: page
+title: 关于 | MSBU Tech
+head: MSBU Tech
+type: about
+members:
+  - name: haharazer
+    github: haharazer
+  - name: David Zhang
+    github: crispgm
+  - name: 布道希
+    github: regrex
+  - name: 影魔
+    github: hzphust
+  - name: Raphael Liu
+    github: raphael-liu
+  - name: EverThis
+    github: everthis
+  - name: Richard Jing
+    github: RichardJing
+  - name: Lang Jun
+    github: langjun
+---
+
+<div class="page-title">
+关于
+</div>
+<div class="article">
+  <div class="article-title">
+    <h3>我们是 MSBU Tech!</h3>
+  </div>
+  <div class="article-comment">
+    <i class="fa fa-rss-square" aria-hidden="true"></i>
+    <a href="/weekly/feed.xml" target="_blank">
+      订阅技术周刊
+    </a>
+    <i class="fa fa-rss-square" aria-hidden="true"></i>
+    <a href="/blog/feed.xml" target="_blank">
+      订阅博客
+    </a>
+    加入我们
+  </div>
+</div>
+
+<div class="page-title">
+我们的成员
+</div>
+{% for member in page.members %}
+<div class="article">
+  <div class="article-star">
+    <a href="https://github.com/{{ member.github }}" target="_blank">
+      <i class="fa fa-github" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div class="article-title">
+    {{ member.name }}
+  </div>
+</div>
+{% endfor %}

@@ -31,7 +31,7 @@ a:hover {
   text-decoration: underline;
 }
 footer {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -105,6 +105,8 @@ nav{
 .page-title {
   text-align: center;
   font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 0.8rem;
 }
 #rss {
   text-align: center;
@@ -112,9 +114,11 @@ nav{
   margin-bottom: 1rem;
 }
 .article {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 0.05rem solid #aaaaaa;
+  padding: 1rem;
+  background: #fbfbfb;
+  box-shadow: 0 .1rem .4rem 0 #ddd;
 }
 .article-item {
   margin-top: .5rem;
@@ -132,6 +136,10 @@ nav{
   margin-top: 0;
   margin-bottom: 0;
   color: #bbbbbb;
+}
+.article-star {
+  float: right;
+  margin-left: 1rem;
 }
 @media (min-width: 48rem) {
   .article-date {

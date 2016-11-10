@@ -4,30 +4,32 @@ title: 首页 | MSBU Tech
 head: MSBU Tech
 type: index
 ---
-<div class="article">
-  <!-- <div class="page-title">
-    <img src="images/pumpkin.svg">
-  </div> -->
-  <div class="page-title">
-    周刊
-  </div>
+<!-- <div class="page-title">
+  <img src="images/pumpkin.svg">
+</div> -->
+<div class="page-title">
+  周刊
+</div>
 {% assign sorted_weekly = site.weekly | reverse %}
-{% for post in sorted_weekly limit: 10 %}
+{% for post in sorted_weekly limit: 6 %}
+<div class="article">
+  <a href="{{ site.baseurl }}{{ post.url }}">
   <div class="article-item">
     <div class="article-date">
       {{ post.date | date: "%Y/%m/%d" }}
     </div>
     <div class="article-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">业内技术周刊</a>
+      业内技术周刊
     </div>
   </div>
-{% endfor %}
+  </a>
 </div>
+{% endfor %}
+<div class="page-title">
+  分享
+</div>
+{% for share in site.data.share %}
 <div class="article">
-  <div class="page-title">
-    分享
-  </div>
-  {% for share in site.data.share %}
   <div class="article-item">
     <div class="article-date">
       {{ share.date }}
@@ -39,13 +41,13 @@ type: index
       分享人: {{ share.person }}
     </div>
   </div>
+</div>
 {% endfor %}
+<div class="page-title">
+  博客
 </div>
 <div class="article">
-  <div class="page-title">
-    博客
-  </div>
-{% for post in site.posts limit:10 %}
+{% for post in site.posts limit:6 %}
   <div class="article-item">
     <div class="article-date">
       {{ post.date | date: "%Y/%m/%d" }}
@@ -59,11 +61,11 @@ type: index
   </div>
 {% endfor %}
 </div>
+<div class="page-title">
+  项目
+</div>
+{% for project in site.data.project %}
 <div class="article">
-  <div class="page-title">
-    项目
-  </div>
-  {% for project in site.data.project %}
   <div class="article-item">
     <div class="article-title">
       <a href="{{ project.link }}">{{ project.name }}</a>
@@ -74,5 +76,5 @@ type: index
       </p>
     </div>
   </div>
-  {% endfor %}
 </div>
+{% endfor %}
