@@ -20,21 +20,40 @@ body {
   text-align: center;
   height: 100%;
 }
-
 h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
-
 a {
   text-decoration: none;
-  color: darkred;
+  color: #4078c0;
 }
 a:hover {
   text-decoration: underline;
 }
 footer {
+  display: flex;
+  justify-content: space-between;
   font-size: 1rem;
   text-align: center;
-  margin-top: 3rem;
+  border-top: .1rem solid #ddd;
+  margin-top: 2rem;
   margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+.footer-column {
+  text-align: left;
+  padding-left: 1rem;
+}
+.footer-column:first-child {
+  border-left: none;
+}
+.footer-list {
+}
+.footer-list li {
+  list-style: none;
+  margin-left: -2.5rem;
+  padding-top: .2rem;
+}
+.footer-heading {
+  padding-right: 1rem;
 }
 #wrapper {
   margin: 0 auto;
@@ -47,21 +66,24 @@ footer {
   }
 }
 nav{
-  border-bottom: .05rem solid #aaaaaa;
-  display: flex;
+  border-bottom: .1rem solid #ddd;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-bottom: .2rem;
   font-size: 1rem;
 }
 /* Menu */
 #head {
+  padding-top: .2rem;
+  font-size: 1.2rem;
+  text-align: left;
 }
 #menu {
   display: flex;
-  margin-left: 10px;
+  margin-left: 0.8rem;
   line-height: 1.25;
+  float: right;
 }
 .menu-item {
   padding-left: 0.4rem;
@@ -82,16 +104,14 @@ nav{
     display: block;
   }
   #head {
-    font-size: 2rem;
-    padding-left: .25rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    padding-left: .2rem;
+    margin-bottom: .2rem;
   }
   #menu {
+    padding-top: .3rem;
     display: flex;
     justify-content: space-around;
-  }
-  .menu-item {
-    padding-right: 1rem;
   }
 }
 #date {
@@ -104,7 +124,7 @@ nav{
 }
 .page-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 0.8rem;
 }

@@ -1,11 +1,44 @@
 <footer>
-  MSBU on GitHub:
-  {% for org in site.data.orgs %}
-  <a href="{{ org.link }}">{{ org.name }}</a>
-  {% endfor %}
-  <p>
-    MSBU Tech &copy; 2016.
-  </p>
+  <div class="footer-column">
+    MSBU Tech &copy; {{site.time | date: "%Y"}}
+  </div>
+  <div class="footer-column">
+    <div class="footer-heading">
+      快速跳转
+    </div>
+    <div class="footer-list">
+      <ul>
+        <li><a href="/weekly/">周刊</a></li>
+        <li><a href="/share/">分享</a></li>
+        <li><a href="/blog/">博客</a></li>
+        <li><a href="/about/">关于</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-column">
+    <div class="footer-heading">
+      Open Source
+    </div>
+    <div class="footer-list">
+      <ul>
+        {% for project in site.data.project %}
+        <li><a href="{{ project.link }}">{{ project.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="footer-column">
+    <div class="footer-heading">
+      MSBU on GitHub
+    </div>
+    <div class="footer-list">
+      <ul>
+      {% for org in site.data.orgs %}
+      <li><a href="{{ org.link }}">{{ org.name }}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
 </footer>
 </div>
 <script>

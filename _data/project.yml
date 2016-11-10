@@ -6,3 +6,7 @@
   link:  "https://msbu-tech.github.io/go-sf/"
   repo:  "msbu-tech/go-sf"
   intro: "Service 框架生成工具"
+- name:  "pysvn-jumbo-repo"
+  link:  "https://github.com/msbu-tech/pysvn-jumbo-repo"
+  repo:  "msbu-tech/pysvn-jumbo-repo"
+  intro: "pysvn jumbo 包"

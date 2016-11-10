@@ -3,12 +3,14 @@ layout: page
 title: 关于 | MSBU Tech
 head: MSBU Tech
 type: about
+permalink: /about/
 members:
   - name: haharazer
     github: haharazer
   - name: David Zhang
     github: crispgm
   - name: 布道希
+    homepage: https://regrex.github.io/
     github: regrex
   - name: 影魔
     github: hzphust
@@ -49,7 +51,12 @@ members:
 <div class="article">
   <div class="article-star">
     <a href="https://github.com/{{ member.github }}" target="_blank">
+      {% if member.homepage %}
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      {% endif %}
+      {% if member.github %}
       <i class="fa fa-github" aria-hidden="true"></i>
+      {% endif %}
     </a>
   </div>
   <div class="article-title">
