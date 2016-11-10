@@ -35,8 +35,8 @@ a:hover {
 }
 @media (max-width: 48rem) {
   .wrapper {
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 nav{
@@ -62,7 +62,7 @@ nav{
   float: right;
 }
 .menu-item {
-  padding-left: 0.4rem;
+  padding-left: 1rem;
   text-align: center;
 }
 .menu-item a {
