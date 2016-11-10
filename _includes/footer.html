@@ -1,46 +1,49 @@
 <footer>
-  <div class="footer-column">
-    MSBU Tech &copy; {{site.time | date: "%Y"}}
-  </div>
-  <div class="footer-column">
-    <div class="footer-heading">
-      快速跳转
-    </div>
-    <div class="footer-list">
-      <ul>
-        <li><a href="/weekly/">周刊</a></li>
-        <li><a href="/share/">分享</a></li>
-        <li><a href="/blog/">博客</a></li>
-        <li><a href="/about/">关于</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-column">
-    <div class="footer-heading">
-      Open Source
-    </div>
-    <div class="footer-list">
-      <ul>
-        {% for project in site.data.project %}
-        <li><a href="{{ project.link }}">{{ project.name }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-  <div class="footer-column">
-    <div class="footer-heading">
-      MSBU on GitHub
-    </div>
-    <div class="footer-list">
-      <ul>
-      {% for org in site.data.orgs %}
-      <li><a href="{{ org.link }}">{{ org.name }}</a></li>
-      {% endfor %}
-      </ul>
+  <div class="wrapper">
+    <div class="footer-main">
+      <div class="footer-column">
+        MSBU Tech &copy; {{site.time | date: "%Y"}}
+      </div>
+      <div class="footer-column">
+        <div class="footer-heading">
+          快速跳转
+        </div>
+        <div class="footer-list">
+          <ul>
+            <li><a href="/weekly/">周刊</a></li>
+            <li><a href="/share/">分享</a></li>
+            <li><a href="/blog/">博客</a></li>
+            <li><a href="/about/">关于</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-column">
+        <div class="footer-heading">
+          Open Source
+        </div>
+        <div class="footer-list">
+          <ul>
+            {% for project in site.data.project %}
+            <li><a href="{{ project.link }}">{{ project.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="footer-column">
+        <div class="footer-heading">
+          MSBU on GitHub
+        </div>
+        <div class="footer-list">
+          <ul>
+          {% for org in site.data.orgs %}
+          <li><a href="{{ org.link }}">{{ org.name }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
-</div>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

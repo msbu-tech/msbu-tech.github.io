@@ -1,25 +1,27 @@
 <nav>
-  <div id="menu">
-    <div class="menu-item {% if page.type == "index" %}{{ "menu-active" }}{% endif %}">
-      <a href="/">首页</a>
+  <div class="wrapper">
+    <div id="menu">
+      <div class="menu-item {% if page.type == "index" %}{{ "menu-active" }}{% endif %}">
+        <a href="/">首页</a>
+      </div>
+      <div class="menu-item {% if page.type == "weekly" %}{{ "menu-active" }}{% endif %}">
+        <a href="/weekly/">周刊</a>
+      </div>
+      <div class="menu-item {% if page.type == "share" %}{{ "menu-active" }}{% endif %}">
+        <a href="/share/">分享</a>
+      </div>
+      <div class="menu-item {% if page.type == "project" %}{{ "menu-active" }}{% endif %}">
+        <a href="/project/">项目</a>
+      </div>
+      <div class="menu-item {% if page.type == "blog" %}{{ "menu-active" }}{% endif %}">
+        <a href="/blog/">博客</a>
+      </div>
+      <div class="menu-item {% if page.type == "about" %}{{ "menu-active" }}{% endif %}">
+        <a href="/about/">关于</a>
+      </div>
     </div>
-    <div class="menu-item {% if page.type == "weekly" %}{{ "menu-active" }}{% endif %}">
-      <a href="/weekly/">周刊</a>
+    <div id="head">
+      MSBU Tech
     </div>
-    <div class="menu-item {% if page.type == "share" %}{{ "menu-active" }}{% endif %}">
-      <a href="/share/">分享</a>
-    </div>
-    <div class="menu-item {% if page.type == "project" %}{{ "menu-active" }}{% endif %}">
-      <a href="/project/">项目</a>
-    </div>
-    <div class="menu-item {% if page.type == "blog" %}{{ "menu-active" }}{% endif %}">
-      <a href="/blog/">博客</a>
-    </div>
-    <div class="menu-item {% if page.type == "about" %}{{ "menu-active" }}{% endif %}">
-      <a href="/about/">关于</a>
-    </div>
-  </div>
-  <div id="head">
-    MSBU Tech
   </div>
 </nav>
