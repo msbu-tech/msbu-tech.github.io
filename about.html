@@ -32,16 +32,14 @@ members:
     我们是 MSBU Tech!
   </div>
   <div class="article-comment">
-    <p>
-      <i class="fa fa-rss-square" aria-hidden="true"></i>
-      <a href="/weekly/feed.xml" target="_blank">
-        订阅技术周刊
-      </a>
-      <i class="fa fa-rss-square" aria-hidden="true"></i>
-      <a href="/blog/feed.xml" target="_blank">
-        订阅博客
-      </a>
-    </p>
+    <i class="fa fa-rss-square" aria-hidden="true"></i>
+    <a href="/weekly/feed.xml" target="_blank">
+      订阅技术周刊
+    </a>
+    <i class="fa fa-rss-square" aria-hidden="true"></i>
+    <a href="/blog/feed.xml" target="_blank">
+      订阅博客
+    </a>
   </div>
 </div>
 
@@ -50,7 +48,7 @@ members:
 </div>
 {% for member in page.members %}
 <div class="article">
-  <div class="article-star">
+  <div class="article-date">
     <a href="https://github.com/{{ member.github }}" target="_blank">
       {% if member.homepage %}
       <i class="fa fa-globe" aria-hidden="true"></i>

@@ -43,8 +43,8 @@ type: index
 <div class="page-title">
   博客
 </div>
-<div class="article">
 {% for post in site.posts limit:6 %}
+<div class="article">
   <div class="article-item">
     <div class="article-date">
       {{ post.date | date: "%Y/%m/%d" }}
@@ -56,8 +56,8 @@ type: index
       {{ post.excerpt }}
     </div>
   </div>
-{% endfor %}
 </div>
+{% endfor %}
 <div class="page-title">
   项目
 </div>

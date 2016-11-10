@@ -25,10 +25,11 @@ type: weekly
       <a href="{{ site.baseurl }}{{ post.url }}">业内技术周刊</a>
     </div>
     <div class="article-comment">
-      {% for item in site.data[post.datasrc].articles limit:3 %}
-      <div>{{ item.title }}</div>
+      <ul>
+      {% for item in site.data[post.datasrc].articles %}
+      <li>{{ item.title }}</li>
       {% endfor %}
-      <div>...</div>
+      </ul>
     </div>
   </div>
 </div>

@@ -45,24 +45,23 @@ nav{
   border-bottom: .1rem solid #ddd;
   align-items: center;
   margin-bottom: 1rem;
-  padding-top: 1rem;
-  padding-bottom: .6rem;
+  padding-top: 1.6rem;
+  padding-bottom: 1rem;
   font-size: 1rem;
 }
 /* Menu */
 #head {
-  padding-top: .2rem;
+  margin-top: -0.2rem;
   font-size: 1.2rem;
   text-align: left;
 }
 #menu {
   display: flex;
   margin-left: 0.8rem;
-  line-height: 1.25;
   float: right;
 }
 .menu-item {
-  padding-left: 1rem;
+  padding-left: 0.8rem;
   text-align: center;
 }
 .menu-item a {
@@ -135,7 +134,8 @@ nav{
 }
 .article-star {
   float: right;
-  margin-left: 1rem;
+  right: 1rem;
+  width: 5rem;
 }
 .article-comment {
   margin-top: .4rem;
