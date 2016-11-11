@@ -151,6 +151,13 @@ nav{
   right: 1rem;
   width: 5rem;
 }
+.article-icon {
+  float: right;
+  font-size: 1.25rem;
+}
+.article-icon a:hover {
+  text-decoration: none;
+}
 .article-comment {
   margin-top: .4rem;
   font-size: .9rem;
@@ -221,6 +228,7 @@ footer {
   padding-top: .2rem;
 }
 .footer-heading {
+  line-height: 1.2;
   padding-right: 1rem;
 }
 @media (max-width: 48rem) {
@@ -232,5 +240,8 @@ footer {
   }
   .footer-column:first-child {
     display: block;
+  }
+  .footer-list {
+    display: none;
   }
 }

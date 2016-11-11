@@ -10,10 +10,11 @@ members:
   - name: David Zhang
     github: crispgm
   - name: 布道希
-    homepage: https://regrex.github.io/
     github: regrex
+    homepage: https://regrex.github.io/
   - name: 影魔
     github: hzphust
+    homepage: https://hzphust.github.io/
   - name: Raphael Liu
     github: raphael-liu
   - name: EverThis
@@ -22,6 +23,7 @@ members:
     github: RichardJing
   - name: Lang Jun
     github: langjun
+    homepage: https://langjun.github.io/
 ---
 
 <div class="page-title">
@@ -48,15 +50,17 @@ members:
 </div>
 {% for member in page.members %}
 <div class="article">
-  <div class="article-date">
-    <a href="https://github.com/{{ member.github }}" target="_blank">
-      {% if member.homepage %}
+  <div class="article-icon">
+    {% if member.homepage %}
+    <a href="{{ member.homepage }}" target="_blank">
       <i class="fa fa-globe" aria-hidden="true"></i>
-      {% endif %}
-      {% if member.github %}
-      <i class="fa fa-github" aria-hidden="true"></i>
-      {% endif %}
     </a>
+    {% endif %}
+    {% if member.github %}
+    <a href="https://github.com/{{ member.github }}" target="_blank">
+      <i class="fa fa-github" aria-hidden="true"></i>
+    </a>
+    {% endif %}
   </div>
   <div class="article-title">
     {{ member.name }}
