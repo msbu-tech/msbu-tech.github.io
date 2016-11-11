@@ -16,7 +16,7 @@ layout: null
       <item>
         <title>MSBU Tech 技术周刊 - {{ post.date | date: "%Y/%m/%d"}}</title>
         {% capture content %}
-        {% for item in site.data[post.datasrc].articles %}
+        {% for item in post.articles %}
         <h2><a href="{{ item.link }}">{{ item.title }}</a></h2>
         <div>
         {% for tag in item.tags %}
