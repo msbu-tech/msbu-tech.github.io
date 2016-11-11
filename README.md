@@ -47,7 +47,7 @@ _weekly_email/
 ```
 
 * Blog: `_posts/`.
-* Weekly: `_weekly/` as a post, `_weekly_email/` for sending promoting email.
+* Weekly: `_weekly/` as a post, `_newsletter/` for sending promoting email.
 
 Editors should create post or weekly in that folders. To make weekly even simpler, `rake` is available for creating a new weekly.
 
@@ -64,7 +64,7 @@ It would generate files as follows, with the current date.
 ```
 _data/2016-10-09-weekly.yml
 _weekly/2016-10-09-weekly.md
-_weekly_email/2016-10-09-weekly-email.md
+_newsletter/2016-10-09-weekly-email.md
 ```
 
 To specify date, use `rake weekly[:date]`.

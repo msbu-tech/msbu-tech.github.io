@@ -19,7 +19,7 @@ task :weekly, [:date] do |t, args|
 
   weekly_data_file  = "_data/#{cur_date}-weekly.yml"
   weekly_html_file  = "_weekly/#{cur_date}-weekly.md"
-  weekly_email_file = "_weekly_email/#{cur_date}-weekly-email.md"
+  weekly_email_file = "_newsletter/#{cur_date}-weekly-email.md"
 
   weekly_frontmatter   = "---\ndatasrc: #{cur_date}-weekly\n---"
   weekly_yaml_scaffold = <<-EOF
