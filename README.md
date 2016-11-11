@@ -62,7 +62,6 @@ rake weekly
 It would generate files as follows, with the current date.
 
 ```
-_data/2016-10-09-weekly.yml
 _weekly/2016-10-09-weekly.md
 _newsletter/2016-10-09-weekly-email.md
 ```
@@ -72,6 +71,8 @@ To specify date, use `rake weekly[:date]`.
 ```
 rake weekly[2016-10-09]
 ```
+
+The articles should be set in `_weekly/` inside the frontmatter of each `.md` file.
 
 ## For Designer
 
