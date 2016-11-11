@@ -31,18 +31,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.info {
-  background-color: #6ec3b4;
-}
-.info a {
-  color: #393c40;
-}
-.hint {
-  background-color: #facb5b;
-}
-.warning {
-  background-color: #e95260;
-}
 .wrapper {
   margin: 0 auto;
   max-width: 48rem;
@@ -244,4 +232,16 @@ footer {
   .footer-list {
     display: none;
   }
+}
+.info {
+  background-color: #6ec3b4;
+}
+.info a {
+  color: #393c40;
+}
+.hint {
+  background-color: #facb5b;
+}
+.warning {
+  background-color: #e95260;
 }
