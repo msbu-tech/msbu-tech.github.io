@@ -2,7 +2,7 @@ baseurl: ""
 collections:
   weekly:
     output: true
-  weekly_email:
+  newsletter:
     output: true
 defaults:
   - scope:
@@ -14,7 +14,7 @@ defaults:
       head: MSBU Tech 技术周刊
   - scope:
       path: ""
-      type: weekly_email
+      type: newsletter
     values:
       layout: weekly-email
       title: MSBU Tech 技术周刊

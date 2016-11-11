@@ -8,6 +8,10 @@ layout: nil
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>业内技术周刊 {{ page.date | date:"%Y/%m/%d" }}</title>
   <style type="text/css">
+  body {
+    color: #393c40;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
   h2 {
     font-size: 28px;
     font-weight: normal;
@@ -25,8 +29,7 @@ layout: nil
     font-weight: normal;
   }
   a {
-    color: darkred;
-    text-decoration: none;
+    color: #4a90e2;
   }
   .link {
     margin-bottom: 3em;
@@ -40,7 +43,7 @@ layout: nil
   <h2>业内技术周刊</h2>
   <h4 class="date">{{ page.date | date:"%Y/%m/%d" }}</h4>
   <h4 class="link"><a href="https://msbu-tech.github.io/weekly/{{ page.date | date:"%Y-%m-%d" }}-weekly.html">https://msbu-tech.github.io/weekly/{{ page.date | date:"%Y-%m-%d" }}-weekly.html</a> <a href="https://msbu-tech.github.io/weekly/feed.xml">订阅</a></h4>
-  
+
   {% for article in site.data[page.datasrc].articles %}
   <h4><a href="{{ article.link }}">{{ article.title }}</a></h4>
   <h5 class="tags">
