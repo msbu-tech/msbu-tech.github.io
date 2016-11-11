@@ -26,7 +26,7 @@ type: weekly
     </div>
     <div class="article-comment">
       <ul>
-      {% for item in site.data[post.datasrc].articles %}
+      {% for item in post.articles %}
       <li>{{ item.title }}</li>
       {% endfor %}
       </ul>

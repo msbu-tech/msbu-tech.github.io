@@ -7,7 +7,7 @@ MSBU Tech 技术周刊
 <div class="page-date">
 {{ page.date | date:"%Y/%m/%d" }}
 </div>
-{% for article in site.data[page.datasrc].articles %}
+{% for article in page.articles %}
 <div id="i-article-{{ forloop.index }}" class="article">
   {% if article.referrer %}
   <div class="article-referrer">{{ article.referrer}}</div>
