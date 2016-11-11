@@ -42,9 +42,17 @@ layout: nil
 <body>
   <h2>业内技术周刊</h2>
   <h4 class="date">{{ page.date | date:"%Y/%m/%d" }}</h4>
-  <h4 class="link"><a href="https://msbu-tech.github.io/weekly/{{ page.date | date:"%Y-%m-%d" }}-weekly.html">https://msbu-tech.github.io/weekly/{{ page.date | date:"%Y-%m-%d" }}-weekly.html</a> <a href="https://msbu-tech.github.io/weekly/feed.xml">订阅</a></h4>
-
-  {% for article in site.data[page.datasrc].articles %}
+  <h4 class="link">
+    <a href="https://msbu-tech.github.io/weekly/{{ page.date | date:"%Y-%m-%d" }}-weekly.html">https://msbu-tech.github.io/weekly/{{ page.date | date:"%Y-%m-%d" }}-weekly.html</a>
+    <a href="https://msbu-tech.github.io/weekly/feed.xml">订阅</a>
+  </h4>
+  {% for weekly in site.weekly %}
+    {% assign weeklyDate = weekly.date | date: '%Y-%m-%d-weekly' %}
+    {% if weeklyDate == page.datasrc %}
+      {% assign curWeekly = weekly %}
+    {% endif %}
+  {% endfor %}
+  {% for article in curWeekly.articles %}
   <h4><a href="{{ article.link }}">{{ article.title }}</a></h4>
   <h5 class="tags">
   	{% for tag in article.tags %}
