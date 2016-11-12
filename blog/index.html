@@ -7,12 +7,6 @@ type: blog
 <div class="page-title">
   博客
 </div>
-<div class="article info">
-  <i class="fa fa-rss-square" aria-hidden="true"></i>
-  <a href="/blog/feed.xml" target="_blank">
-    订阅
-  </a>
-</div>
 {% for post in site.posts %}
   {% if post.layout == "blog" %}
 <div class="article">

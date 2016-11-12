@@ -19,7 +19,6 @@ body {
   background-color: #f0f1f2;
   word-wrap: break-word;
   text-align: center;
-  height: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight:normal;
@@ -183,7 +182,6 @@ nav{
     margin-left: 1rem;
   }
   .article-item {
-    margin-top: .5rem;
   }
   .article-referrer {
     float: right;

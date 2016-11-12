@@ -8,16 +8,17 @@ type: index
   周刊
 </div>
 {% assign sorted_weekly = site.weekly | reverse %}
-{% for post in sorted_weekly limit: 6 %}
+{% for weekly in sorted_weekly limit: 6 %}
 <div class="article">
   <div class="article-item">
     <div class="article-date">
-      {{ post.date | date: "%Y/%m/%d" }}
+      {{ weekly.date | date: "%Y/%m/%d" }}
     </div>
     <div class="article-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
+      <a href="{{ site.baseurl }}{{ weekly.url }}">
         业内技术周刊
       </a>
+      {{ weekly.articles | size }}
     </div>
   </div>
 </div>
@@ -61,16 +62,24 @@ type: index
 <div class="page-title">
   项目
 </div>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 {% for project in site.data.project %}
 <div class="article">
   <div class="article-item">
+    <div class="article-star">
+      <a class="github-button"
+         href="https://github.com/{{ project.repo }}"
+         data-icon="octicon-star"
+         data-count-href="/{{ project.repo }}/stargazers"
+         data-count-api="/repos/{{ project.repo }}#stargazers_count"
+         data-count-aria-label="# stargazers on GitHub"
+         aria-label="Star {{ project.repo }} on GitHub">Star</a>
+    </div>
     <div class="article-title">
       <a href="{{ project.link }}">{{ project.name }}</a>
     </div>
     <div class="article-main">
-      <p>
-        {{ project.intro }}
-      </p>
+      {{ project.intro }}
     </div>
   </div>
 </div>
