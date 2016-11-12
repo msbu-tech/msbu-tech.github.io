@@ -88,7 +88,6 @@ nav{
     margin-bottom: .2rem;
   }
   #menu {
-    padding-top: .3rem;
     display: flex;
     justify-content: space-around;
   }
