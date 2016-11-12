@@ -137,7 +137,7 @@ nav{
 .article-star {
   float: right;
   right: 1rem;
-  width: 5rem;
+  width: 6rem;
 }
 .article-icon {
   float: right;
@@ -187,6 +187,11 @@ nav{
   }
   .article-referrer {
     float: right;
+  }
+  .article-star {
+    float: right;
+    right: 1rem;
+    width: 5rem;
   }
 }
 footer {
