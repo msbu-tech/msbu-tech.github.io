@@ -8,14 +8,14 @@ MSBU Tech 技术周刊
 {{ page.date | date:"%Y/%m/%d" }}
 </div>
 {% for article in page.articles %}
-<div id="i-article-{{ forloop.index }}" class="article">
+<div id="A{{ forloop.index }}" class="article">
   {% if article.referrer %}
   <div class="article-referrer">{{ article.referrer}}</div>
   {% endif %}
   <div class="article-title">
     <span><a href="{{ article.link}}" target="_blank">{{ article.title }}</a></span>
     <span class="article-share">
-      <a href="#i-article-{{ forloop.index }}">
+      <a href="#A{{ forloop.index }}">
         <i class="fa fa-paragraph"></i>
       </a>
     </span>
