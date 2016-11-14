@@ -173,7 +173,6 @@ nav{
   justify-content: space-between;
 }
 .tag-item:hover {
-  text-decoration: underline;
   cursor: default;
 }
 @media (min-width: 48rem) {
