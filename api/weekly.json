@@ -1,0 +1,22 @@
+---
+---
+{
+  "api_version": 1,
+  "count": {% assign weekly_count = site.weekly | size %}{{ weekly_count }},
+  "weekly": [{% assign sorted_weekly = site.weekly | reverse %}{% for weekly in sorted_weekly %}
+    {
+      "id": "{{ forloop.index }}",
+      "date": "{{ weekly.date | date: "%Y-%m-%d" }}",
+      "count": "{{ weekly.articles | size }}",
+      "articles": [{% assign article_count = weekly.articles | size %}{% for article in weekly.articles %}
+        {
+          "id": "{{ forloop.index }}",
+          "title": "{{ article.title | escape_once }}",
+          "link": "{{ article.link | escape_once }}",
+          "comment": "{{ article.comment | escape_once }}",
+          "tags": [{% assign tag_count = article.tags | size %}{% for tag in article.tags %}"{{ tag | escape_once }}"{% if forloop.index != tag_count %}, {% endif %}{% endfor %}]
+        }{% if forloop.index != article_count %},{% endif %}{% endfor %}
+      ]
+    }{% if forloop.index != weekly_count %},{% endif %}{% endfor %}
+  ]
+}
