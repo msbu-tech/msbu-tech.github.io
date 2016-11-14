@@ -14,7 +14,7 @@
           "title": "{{ article.title | escape_once }}",
           "link": "{{ article.link | escape_once }}",
           "comment": "{{ article.comment | escape_once }}",
-          "tags": [{% for tag in article.tags %}"{{ tag | escape_once }}"{% if forloop.index != tag_count %}, {% endif %}{% endfor %}]
+          "tags": [{% for tag in article.tags %}"{{ tag | escape_once }}"{% if forloop.last %}, {% endif %}{% endfor %}]
         }{% if forloop.last %},{% endif %}{% endfor %}
       ]
     }{% if forloop.last %},{% endif %}{% endfor %}
