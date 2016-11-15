@@ -3,27 +3,6 @@ layout: page
 title: 关于 | MSBU Tech
 type: about
 permalink: /about/
-members:
-  - name: haharazer
-    github: haharazer
-  - name: David Zhang
-    github: crispgm
-  - name: 布道希
-    github: regrex
-    homepage: https://regrex.github.io/
-  - name: 影魔
-    github: hzphust
-    homepage: https://hzphust.github.io/
-  - name: Raphael Liu
-    github: raphael-liu
-    homepage: http://bdapp.org/
-  - name: EverThis
-    github: everthis
-  - name: Richard Jing
-    github: RichardJing
-  - name: Lang Jun
-    github: langjun
-    homepage: https://langjun.github.io/
 ---
 
 <div class="page-title">
@@ -35,7 +14,7 @@ members:
 <div class="page-title">
   我们的成员
 </div>
-{% for member in page.members %}
+{% for member in site.data.members %}
 <div class="article">
   <div class="article-icon">
     {% if member.homepage %}
