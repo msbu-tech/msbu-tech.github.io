@@ -44,22 +44,38 @@ task :test_weekly do
     if weekly_file == "." || weekly_file == ".."
       next
     end
+
     content = YAML.load(open("_weekly/#{weekly_file}").read)
+
     title_record = Hash.new
+    comment_record = Hash.new
     link_record = Hash.new
-    content["articles"].each_with_index do |article|
+
+    content["articles"].each_with_index do |article, index|
       # check title duplicate
       if title_record.has_key? article["title"]
-        puts "[ERROR] Duplicated name within a weekly found on:"
+        puts "[ERROR] Duplicated name within a weekly found:"
         puts "    Filename: #{weekly_file}"
+        puts "        Item: #{index}"
         puts " >> Name:     #{article['title']}"
         exit 1
       end
       title_record[article["title"]] = 1
+      # check comment duplicate
+      if comment_record.has_key? article["comment"]
+        puts "[ERROR] Duplicated comment within a weekly found:"
+        puts "    Filename: #{weekly_file}"
+        puts "        Item: #{index}"
+        puts "    Name:     #{article['title']}"
+        puts "    Comment:  #{article['comment']}"
+        exit 1
+      end
+      comment_record[article["comment"]] = 1
       # check link duplicate
       if link_record.has_key? article["link"]
-        puts "[ERROR] Duplicated link within a weekly found on:"
+        puts "[ERROR] Duplicated link within a weekly found:"
         puts "    Filename: #{weekly_file}"
+        puts "        Item: #{index}"
         puts "    Name:     #{article['title']}"
         puts " >> Link:     #{article['link']}"
         exit 1
@@ -69,8 +85,9 @@ task :test_weekly do
       tags_record = Hash.new
       article["tags"].each do |tag|
         if tags_record.has_key? tag
-          puts "[ERROR] Duplicated tags found on:"
+          puts "[ERROR] Duplicated tags found:"
           puts "    Filename: #{weekly_file}"
+          puts "        Item: #{index}"
           puts "    Name:     #{article['title']}"
           puts " >> Tags:     #{article['tags']}"
           exit 1
