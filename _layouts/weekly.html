@@ -13,7 +13,14 @@ MSBU Tech 技术周刊
   <div class="article-referrer">{{ article.referrer}}</div>
   {% endif %}
   <div class="article-title">
-    <span><a href="{{ article.link}}" target="_blank">{{ article.title }}</a></span>
+    <span{% if article.original == true %} title="原创" class="article-original"{% endif %}>
+    {% if article.original == true %}
+      <i class="fa fa-bookmark"></i>
+    {% else %}
+      <i class="fa fa-retweet"></i>
+    {% endif %}
+      <a href="{{ article.link}}" target="_blank">{{ article.title }}</a>
+    </span>
     <span class="article-share">
       <a href="#A{{ forloop.index }}">
         <i class="fa fa-paragraph"></i>

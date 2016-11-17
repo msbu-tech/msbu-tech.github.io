@@ -125,6 +125,9 @@ nav{
 .article-title:hover .article-share {
   display: inline-block;
 }
+.article-original {
+  font-weight: bold;
+}
 .article-year {
   margin-top: 2rem;
 }
