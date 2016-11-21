@@ -102,6 +102,6 @@ end
 
 desc "Find the latest weekly and edit with your editor"
 task "edit-latest" do
-  latest = Dir.entries("_weekly").sort_by {|x| File.mtime("_weekly/#{x}")}.reject {|entry| entry == "." || entry == ".."}.last
+  latest = Dir.entries("_weekly").sort_by {|x| File.mtime("_weekly/#{x}")}.last
   sh "$EDITOR _weekly/#{latest}"
 end
