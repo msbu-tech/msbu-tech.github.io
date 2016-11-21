@@ -37,7 +37,7 @@ articles:
 end
 
 desc "Test weekly duplicate"
-task :test_weekly do
+task "test-weekly" do
   require "yaml"
 
   Dir.foreach("_weekly") do |weekly_file|
@@ -98,4 +98,10 @@ task :test_weekly do
   end
 
   puts "Success."
+end
+
+desc "Find the latest weekly and edit with your editor"
+task "edit-latest" do
+  latest = Dir.entries("_weekly").sort_by {|x| File.mtime("_weekly/#{x}")}.reject {|entry| entry == "." || entry == ".."}.last
+  sh "$EDITOR _weekly/#{latest}"
 end
