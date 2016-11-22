@@ -25,7 +25,8 @@ type: index
 <div class="page-title">
   分享
 </div>
-{% for share in site.data.share %}
+{% assign sorted_share = site.data.share | reverse %}
+{% for share in sorted_share %}
 <div class="article">
   <div class="article-item">
     <div class="article-date">

@@ -10,7 +10,8 @@ type: share
   所有分享的演示文档（非涉密）统一由 SpeakerDeck 提供服务，访问时可能需要翻墙代理服务。
 </div>
 <div class="article">
-{% for share in site.data.share %}
+  {% assign sorted_share = site.data.share | reverse %}
+  {% for share in sorted_share %}
   <div class="article-item">
     <div class="article-date">
       {{ share.date }}
