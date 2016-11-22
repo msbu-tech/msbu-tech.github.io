@@ -9,19 +9,19 @@ type: share
 <div class="article info">
   所有分享的演示文档（非涉密）统一由 SpeakerDeck 提供服务，访问时可能需要翻墙代理服务。
 </div>
+{% assign sorted_share = site.data.share | reverse %}
+{% for share in sorted_share %}
 <div class="article">
-  {% assign sorted_share = site.data.share | reverse %}
-  {% for share in sorted_share %}
   <div class="article-item">
     <div class="article-date">
       {{ share.date }}
     </div>
     <div class="article-title">
-      <a href="{{ share.link }}" target="_blank">{{ share.title}}</a>
+      <a href="{{ share.link }}" target="_blank">{{ share.title }}</a>
     </div>
     <div class="article-comment">
       分享人: {{ share.person }}
     </div>
   </div>
-{% endfor %}
 </div>
+{% endfor %}
