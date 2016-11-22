@@ -42,7 +42,7 @@ _weekly/
     2016-09-06-weekly.md
     ...
 _newsletter/
-    2016-09-06-weekly.md
+    2016-09-06-weekly-email.md
     ...
 ```
 
@@ -78,7 +78,7 @@ $ rake weekly\[2016-10-09\]
 
 ### 编辑周刊
 
-周刊中的文章在 `_weekly/` 文件夹中的 `.md` 文件头部的 Front Matter 中以 yaml 格式存放。`_newsletter` 中的文章不需要任何编辑，会自动根据 `_weekly` 中的内容生成。
+周刊中的文章在 `_weekly/` 文件夹中的 `.md` 文件头部的 Front Matter 中以 `yaml` 格式存放。`_newsletter` 中的文章不需要任何编辑，会自动根据 `_weekly` 中的内容生成。
 
 一般情况下，我们都是编辑最新一期周刊的内容。为了方便，我们提供了一个指令用默认编辑器打开最新一期周刊：
 
@@ -110,6 +110,17 @@ $ EDITOR=atom rake edit-latest
 ```
 $ rake test-weekly
 ```
+
+如果发现错误，会提示所在文件、文章、出错字段和原因：
+
+```
+[ERROR] Duplicated name within a weekly found:
+    Filename: 2016-11-22-weekly.md
+        Item: 1
+     >> Name: Google 是如何做到从不宕机的
+```
+
+如果返回“Success.”，则证明检测通过，可以发布。
 
 ## 对于设计者
 
