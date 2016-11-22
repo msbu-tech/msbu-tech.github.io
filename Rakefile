@@ -57,7 +57,7 @@ task "test-weekly" do
         puts "[ERROR] Duplicated name within a weekly found:"
         puts "    Filename: #{weekly_file}"
         puts "        Item: #{index}"
-        puts " >> Name:     #{article['title']}"
+        puts "     >> Name: #{article['title']}"
         exit 1
       end
       title_record[article["title"]] = 1
@@ -66,8 +66,8 @@ task "test-weekly" do
         puts "[ERROR] Duplicated comment within a weekly found:"
         puts "    Filename: #{weekly_file}"
         puts "        Item: #{index}"
-        puts "    Name:     #{article['title']}"
-        puts "    Comment:  #{article['comment']}"
+        puts "        Name: #{article['title']}"
+        puts "  >> Comment: #{article['comment']}"
         exit 1
       end
       comment_record[article["comment"]] = 1
@@ -76,8 +76,8 @@ task "test-weekly" do
         puts "[ERROR] Duplicated link within a weekly found:"
         puts "    Filename: #{weekly_file}"
         puts "        Item: #{index}"
-        puts "    Name:     #{article['title']}"
-        puts " >> Link:     #{article['link']}"
+        puts "        Name: #{article['title']}"
+        puts "     >> Link: #{article['link']}"
         exit 1
       end
       link_record[article["link"]] = 1
@@ -88,8 +88,8 @@ task "test-weekly" do
           puts "[ERROR] Duplicated tags found:"
           puts "    Filename: #{weekly_file}"
           puts "        Item: #{index}"
-          puts "    Name:     #{article['title']}"
-          puts " >> Tags:     #{article['tags']}"
+          puts "        Name: #{article['title']}"
+          puts "     >> Tags: #{article['tags']}"
           exit 1
         end
         tags_record[tag] = 1
