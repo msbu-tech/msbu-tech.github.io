@@ -97,11 +97,11 @@ $ EDITOR=atom rake edit-latest
 | 字段 | 作用 | 类型 | 限制 |
 |------|-----|-----|-----|
 | title | 文章标题 | String | 支持 inline html |
-| original | 是否为原创。原创文章标题会被加粗；原创文章的图标和转载文章不同 | Boolean | 可省略，默认 false |
-| link | 文章链接 | 字符串 |  |
-| comment | 文章推荐语 | 字符串 | 支持 inline html |
-| referrer | 文章推荐人 | 字符串 | 可省略 |
-| tags | 文章标签 | 字符串数组 |  |
+| original | 是否为原创 | Boolean | 可省略，默认 false |
+| link | 文章链接 | String |  |
+| comment | 文章推荐语 | String | 支持 inline html |
+| referrer | 文章推荐人 | String | 可省略 |
+| tags | 文章标签 | String Array |  |
 
 ### 测试
 
