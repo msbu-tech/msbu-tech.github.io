@@ -46,8 +46,8 @@ _newsletter/
     ...
 ```
 
-* 博客: `_posts/`
-* 周刊: 周刊主体放在 `_weekly/`, `_newsletter/` 用于生成推广邮件
+* 博客：`_posts/`
+* 周刊：周刊主体放在 `_weekly/`，`_newsletter/` 用于生成推广邮件
 
 ### 创建周刊
 
@@ -64,7 +64,7 @@ _weekly/2016-10-09-weekly.md
 _newsletter/2016-10-09-weekly-email.md
 ```
 
-如果需要指定时间，可以使用参数：`rake weekly[:date]`，如：
+如果需要指定时间，可以使用参数：
 
 ```
 $ rake weekly[2016-10-09]
