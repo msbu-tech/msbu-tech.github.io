@@ -40,7 +40,8 @@ desc "Test weekly duplicate"
 task "test-weekly", [:date] do |t, args|
   args.with_defaults(:date => "all")
   weekly_date = args[:date]
-
+  weekly_date = find_latest_weekly.split("-weekly.md").at(0) if weekly_date == "latest"
+  
   require "yaml"
   require "colorize"
 
@@ -52,6 +53,8 @@ task "test-weekly", [:date] do |t, args|
     if weekly_date != "all" && weekly_file != "#{weekly_date}-weekly.md"
       next
     end
+
+    puts "Checking #{weekly_file}...".green
 
     content = YAML.load(open("_weekly/#{weekly_file}").read)
 
@@ -161,6 +164,17 @@ end
 
 desc "Find the latest weekly and edit with your editor"
 task "edit-latest" do
-  latest = Dir.entries("_weekly").sort_by {|x| File.mtime("_weekly/#{x}")}.reject {|entry| entry == "." || entry == ".."}.last
+  latest = find_latest_weekly
   sh "$EDITOR _weekly/#{latest}"
+end
+
+
+def find_latest_weekly
+  require "date"
+
+  Dir.entries("_weekly").reject do |entry|
+    entry == "." || entry == ".."
+  end.sort_by do |x|
+    Date.strptime(x.split("-weekly.md").at(0), "%Y-%m-%d").to_time.to_i
+  end.last
 end
