@@ -37,12 +37,19 @@ articles:
 end
 
 desc "Test weekly duplicate"
-task "test-weekly" do
+task "test-weekly", [:date] do |t, args|
+  args.with_defaults(:date => "all")
+  weekly_date = args[:date]
+
   require "yaml"
   require "colorize"
 
   Dir.foreach("_weekly") do |weekly_file|
     if weekly_file == "." || weekly_file == ".."
+      next
+    end
+
+    if weekly_date != "all" && weekly_file != "#{weekly_date}-weekly.md"
       next
     end
 
@@ -53,12 +60,55 @@ task "test-weekly" do
     link_record = Hash.new
 
     content["articles"].each_with_index do |article, index|
-      # check title duplicate
-      if title_record.has_key? article["title"]
-        puts "[ERROR] Duplicated name within a weekly found:"
+      # check empty
+      if article["title"].empty?
+        puts "[ERROR] Empty title within a weekly found:"
         puts "    Filename: #{weekly_file}"
         puts "        Item: #{index}"
-        puts "     >> Name: #{article['title']}".red
+        puts "    >> Title: #{article['title']}".red
+        exit 1
+      end
+      if article["link"].empty?
+        puts "[ERROR] Empty link within a weekly found:"
+        puts "    Filename: #{weekly_file}"
+        puts "        Item: #{index}"
+        puts "       Title: #{article['title']}"
+        puts "     >> Link: #{article['link']}".red
+        exit 1
+      end
+      if article.has_key?("comment") && article["comment"].empty?
+        puts "[WARNING] Empty comment within a weekly found:"
+        puts "    Filename: #{weekly_file}"
+        puts "        Item: #{index}"
+        puts "       Title: #{article['title']}"
+        puts "        Link: #{article['link']}"
+        puts "  >> Comment: #{article['comment']}".red
+      end
+      if article.has_key?("referrer") && article["referrer"].empty?
+        puts "[WARNING] Empty referrer within a weekly found:"
+        puts "    Filename: #{weekly_file}"
+        puts "        Item: #{index}"
+        puts "       Title: #{article['title']}"
+        puts "        Link: #{article['link']}"
+        puts "     Comment: #{article['comment']}"
+        puts " >> Referrer: #{article['referrer']}".red
+      end
+      if article["tags"].empty?
+        puts "[WARNING] Empty referrer within a weekly found:"
+        puts "    Filename: #{weekly_file}"
+        puts "        Item: #{index}"
+        puts "       Title: #{article['title']}"
+        puts "        Link: #{article['link']}"
+        puts "     Comment: #{article['comment']}"
+        puts "    Referrer: #{article['referrer']}"
+        puts "     >> Tags: #{article['tags']}".red
+      end
+      # check title duplicate
+      if title_record.has_key? article["title"]
+        puts "[ERROR] Duplicated title within a weekly found:"
+        puts "    Filename: #{weekly_file}"
+        puts "        Item: #{index}"
+        puts "    >> Title: #{article['title']}".red
         exit 1
       end
       title_record[article["title"]] = 1
@@ -67,7 +117,7 @@ task "test-weekly" do
         puts "[ERROR] Duplicated comment within a weekly found:"
         puts "    Filename: #{weekly_file}"
         puts "        Item: #{index}"
-        puts "        Name: #{article['title']}"
+        puts "       Title: #{article['title']}"
         puts "  >> Comment: #{article['comment']}".red
         exit 1
       end
@@ -77,7 +127,7 @@ task "test-weekly" do
         puts "[ERROR] Duplicated link within a weekly found:"
         puts "    Filename: #{weekly_file}"
         puts "        Item: #{index}"
-        puts "        Name: #{article['title']}"
+        puts "       Title: #{article['title']}"
         puts "     >> Link: #{article['link']}".red
         exit 1
       end
@@ -89,11 +139,19 @@ task "test-weekly" do
           puts "[ERROR] Duplicated tags found:"
           puts "    Filename: #{weekly_file}"
           puts "        Item: #{index}"
-          puts "        Name: #{article['title']}"
+          puts "       Title: #{article['title']}"
           puts "     >> Tags: #{article['tags']}".red
           exit 1
         end
-        tags_record[tag] = 1
+        if tag.empty?
+          puts "[WARNING] Duplicated tags found:"
+          puts "    Filename: #{weekly_file}"
+          puts "        Item: #{index}"
+          puts "       Title: #{article['title']}"
+          puts "     >> Tags: #{article['tags']}".red
+        else
+          tags_record[tag] = 1
+        end
       end
     end
   end
