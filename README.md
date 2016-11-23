@@ -111,6 +111,18 @@ $ EDITOR=atom rake edit-latest
 $ rake test-weekly
 ```
 
+默认是全量扫描，如果只想扫描某期周刊，可以带日期参数运行：
+
+```
+$ rake test-weekly[2016-11-15]
+```
+
+对于最新一期，可以使用 `latest` 参数：
+
+```
+$ rake test-weekly[latest]
+```
+
 如果发现错误，会提示所在文件、文章、出错字段和原因：
 
 ```
