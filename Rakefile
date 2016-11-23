@@ -39,6 +39,7 @@ end
 desc "Test weekly duplicate"
 task "test-weekly" do
   require "yaml"
+  require "colorize"
 
   Dir.foreach("_weekly") do |weekly_file|
     if weekly_file == "." || weekly_file == ".."
@@ -57,7 +58,7 @@ task "test-weekly" do
         puts "[ERROR] Duplicated name within a weekly found:"
         puts "    Filename: #{weekly_file}"
         puts "        Item: #{index}"
-        puts "     >> Name: #{article['title']}"
+        puts "     >> Name: #{article['title']}".red
         exit 1
       end
       title_record[article["title"]] = 1
@@ -67,7 +68,7 @@ task "test-weekly" do
         puts "    Filename: #{weekly_file}"
         puts "        Item: #{index}"
         puts "        Name: #{article['title']}"
-        puts "  >> Comment: #{article['comment']}"
+        puts "  >> Comment: #{article['comment']}".red
         exit 1
       end
       comment_record[article["comment"]] = 1
@@ -77,7 +78,7 @@ task "test-weekly" do
         puts "    Filename: #{weekly_file}"
         puts "        Item: #{index}"
         puts "        Name: #{article['title']}"
-        puts "     >> Link: #{article['link']}"
+        puts "     >> Link: #{article['link']}".red
         exit 1
       end
       link_record[article["link"]] = 1
@@ -89,7 +90,7 @@ task "test-weekly" do
           puts "    Filename: #{weekly_file}"
           puts "        Item: #{index}"
           puts "        Name: #{article['title']}"
-          puts "     >> Tags: #{article['tags']}"
+          puts "     >> Tags: #{article['tags']}".red
           exit 1
         end
         tags_record[tag] = 1

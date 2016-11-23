@@ -3,6 +3,7 @@ GEM
   specs:
     addressable (2.4.0)
     colorator (1.1.0)
+    colorize (0.8.1)
     ffi (1.9.14)
     forwardable-extended (2.6.0)
     jekyll (3.3.0)
@@ -39,7 +40,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  colorize
   jekyll
 
 BUNDLED WITH
-   1.13.2
+   1.13.6
