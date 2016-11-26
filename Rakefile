@@ -264,5 +264,6 @@ def import_articles_from_issues(issue_name)
     end
   end
 
+  puts "[INFO] Import #{articles.count} article(s)".green
   articles
 end
