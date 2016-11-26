@@ -50,7 +50,6 @@ articles:
       weekly_content << "    referrer: \"#{item[:referrer]}\"\n"
       weekly_content << "    comment:  \"#{item[:comment]}\"\n"
       tags = Array.new
-      # item[:tags] = [] << item[:tags] if !item[:tags].include?(",")
       item[:tags].split(",").each do |tag|
         tags << "\"#{tag.strip}\""
       end
@@ -194,7 +193,6 @@ task "edit-latest" do
   latest = find_latest_weekly
   sh "$EDITOR _weekly/#{latest}"
 end
-
 
 def find_latest_weekly
   require "date"

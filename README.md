@@ -76,6 +76,14 @@ $ rake weekly[2016-10-09]
 $ rake weekly\[2016-10-09\]
 ```
 
+### 导入 GitHub Issues 中的周刊
+
+如果已经在 [msbu-tech/weekly](https://github.com/msbu-tech/weekly) 中创建好 Issue，可以直接创建并导入周刊文章：
+
+```
+$ ACCESS_TOKEN=your-access-token-here rake weekly[2016-10-09,true]
+```
+
 ### 编辑周刊
 
 周刊中的文章在 `_weekly/` 文件夹中的 `.md` 文件头部的 Front Matter 中以 `yaml` 格式存放。`_newsletter` 中的文章不需要任何编辑，会自动根据 `_weekly` 中的内容生成。
