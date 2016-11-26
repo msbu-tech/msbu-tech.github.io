@@ -1,4 +1,10 @@
 # coding: utf-8
+
+require "colorize"
+require "date"
+require "octokit"
+require "yaml"
+
 task default: %w[serve]
 
 desc "Init"
@@ -11,10 +17,10 @@ task :serve do
   sh "bundle exec jekyll serve --future"
 end
 
-desc "Create scaffold weekly"
+desc "Create weekly with scaffold or import from issues"
 task :weekly, [:date, :import_flag] do |t, args|
   args.with_defaults(:date => Time.now.strftime("%Y-%m-%d"))
-  args.with_defaults(:import_flag => true)
+  args.with_defaults(:import_flag => false)
 
   weekly_date = args[:date]
   import_flag = args[:import_flag] == "true" || args[:import_flag] == true ? true : false
@@ -40,7 +46,7 @@ articles:
   if import_flag == true
     articles = import_articles_from_issues("#{weekly_date} 文章收集")
     if articles == false
-      puts "Error: import articles error!"
+      puts "[ERROR] Import articles error!".red
       exit 1
     end
     weekly_content = "---\narticles:\n"
@@ -67,9 +73,6 @@ task "test-weekly", [:date] do |t, args|
   args.with_defaults(:date => "all")
   weekly_date = args[:date]
   weekly_date = find_latest_weekly.split("-weekly.md").at(0) if weekly_date == "latest"
-  
-  require "yaml"
-  require "colorize"
 
   Dir.foreach("_weekly") do |weekly_file|
     if weekly_file == "." || weekly_file == ".."
@@ -80,7 +83,7 @@ task "test-weekly", [:date] do |t, args|
       next
     end
 
-    puts "Checking #{weekly_file}...".green
+    puts "[INFO] Checking #{weekly_file}...".green
 
     content = YAML.load(open("_weekly/#{weekly_file}").read)
 
@@ -89,95 +92,66 @@ task "test-weekly", [:date] do |t, args|
     link_record = Hash.new
 
     content["articles"].each_with_index do |article, index|
+      article["title"] = "" if !article.has_key?("title")
+      article["link"] = "" if !article.has_key?("link")
+      article["referrer"] = "" if !article.has_key?("referrer")
+      article["comment"] = "" if !article.has_key?("comment")
+      article["tags"] = "" if !article.has_key?("tags")
+      article_info = {
+        :file_name => weekly_file,
+        :index => index,
+        :title => article["title"],
+        :link => article["link"],
+        :referrer => article["referrer"],
+        :comment => article["comment"],
+        :tags => article["tags"]
+      }
       # check empty
       if article["title"].empty?
-        puts "[ERROR] Empty title within a weekly found:"
-        puts "    Filename: #{weekly_file}"
-        puts "        Item: #{index}"
-        puts "    >> Title: #{article['title']}".red
+        show_message_on_article("ERROR", "Empty title of an article", article_info, :title)
         exit 1
       end
       if article["link"].empty?
         puts "[ERROR] Empty link within a weekly found:"
-        puts "    Filename: #{weekly_file}"
-        puts "        Item: #{index}"
-        puts "       Title: #{article['title']}"
-        puts "     >> Link: #{article['link']}".red
+        show_message_on_article("ERROR", "Empty link of an article", article_info, :link)
         exit 1
       end
-      if article.has_key?("comment") && article["comment"].empty?
-        puts "[WARNING] Empty comment within a weekly found:"
-        puts "    Filename: #{weekly_file}"
-        puts "        Item: #{index}"
-        puts "       Title: #{article['title']}"
-        puts "        Link: #{article['link']}"
-        puts "  >> Comment: #{article['comment']}".red
+      if article["comment"].empty?
+        show_message_on_article("WARNING", "Empty comment of an article", article_info, :comment)
       end
-      if article.has_key?("referrer") && article["referrer"].empty?
-        puts "[WARNING] Empty referrer within a weekly found:"
-        puts "    Filename: #{weekly_file}"
-        puts "        Item: #{index}"
-        puts "       Title: #{article['title']}"
-        puts "        Link: #{article['link']}"
-        puts "     Comment: #{article['comment']}"
-        puts " >> Referrer: #{article['referrer']}".red
+      if article["referrer"].empty?
+        show_message_on_article("WARNING", "Empty referrer of an article", article_info, :referrer)
       end
       if article["tags"].empty?
-        puts "[WARNING] Empty referrer within a weekly found:"
-        puts "    Filename: #{weekly_file}"
-        puts "        Item: #{index}"
-        puts "       Title: #{article['title']}"
-        puts "        Link: #{article['link']}"
-        puts "     Comment: #{article['comment']}"
-        puts "    Referrer: #{article['referrer']}"
-        puts "     >> Tags: #{article['tags']}".red
+        show_message_on_article("WARNING", "Empty tags of an article", article_info, :tags)
       end
       # check title duplicate
       if title_record.has_key? article["title"]
-        puts "[ERROR] Duplicated title within a weekly found:"
-        puts "    Filename: #{weekly_file}"
-        puts "        Item: #{index}"
-        puts "    >> Title: #{article['title']}".red
+        show_message_on_article("ERROR", "Duplicated title within a weekly", article_info, :title)
         exit 1
       end
       title_record[article["title"]] = 1
-      # check comment duplicate
-      if comment_record.has_key? article["comment"]
-        puts "[ERROR] Duplicated comment within a weekly found:"
-        puts "    Filename: #{weekly_file}"
-        puts "        Item: #{index}"
-        puts "       Title: #{article['title']}"
-        puts "  >> Comment: #{article['comment']}".red
-        exit 1
-      end
-      comment_record[article["comment"]] = 1
       # check link duplicate
       if link_record.has_key? article["link"]
-        puts "[ERROR] Duplicated link within a weekly found:"
-        puts "    Filename: #{weekly_file}"
-        puts "        Item: #{index}"
-        puts "       Title: #{article['title']}"
-        puts "     >> Link: #{article['link']}".red
+        show_message_on_article("ERROR", "Duplicated link within a weekly", article_info, :link)
         exit 1
       end
       link_record[article["link"]] = 1
+      # check comment duplicate
+      if comment_record.has_key? article["comment"]
+        show_message_on_article("ERROR", "Duplicated comment within a weekly", article_info, :comment)
+        exit 1
+      end
+      comment_record[article["comment"]] = 1
       # check tags duplicate
       tags_record = Hash.new
       article["tags"].each do |tag|
         if tags_record.has_key? tag
-          puts "[ERROR] Duplicated tags found:"
-          puts "    Filename: #{weekly_file}"
-          puts "        Item: #{index}"
-          puts "       Title: #{article['title']}"
-          puts "     >> Tags: #{article['tags']}".red
+          show_message_on_article("ERROR", "Duplicated tags found", article_info, :tags)
           exit 1
         end
         if tag.empty?
-          puts "[WARNING] Duplicated tags found:"
-          puts "    Filename: #{weekly_file}"
-          puts "        Item: #{index}"
-          puts "       Title: #{article['title']}"
-          puts "     >> Tags: #{article['tags']}".red
+          show_message_on_article("WARNING", "Empty tags found", article_info, :tags)
         else
           tags_record[tag] = 1
         end
@@ -194,9 +168,42 @@ task "edit-latest" do
   sh "$EDITOR _weekly/#{latest}"
 end
 
-def find_latest_weekly
-  require "date"
+def show_message_on_article(level, message, article, highlight_item)
+  puts "[#{level}] #{message.capitalize}:"
 
+  article.each do |key, item|
+    line = case key
+    when :file_name
+      "  Filename: #{article[:file_name]}"
+    when :index
+      "      Item: #{article[:index]}"
+    when :title
+      "     Title: #{article[:title]}"
+    when :link
+      "      Link: #{article[:link]}"
+    when :referrer
+      "  Referrer: #{article[:referrer]}"
+    when :comment
+      "   Comment: #{article[:comment]}"
+    when :tags
+      "      Tags: #{article[:tags]}"
+    end
+
+
+    if key == highlight_item
+      case level
+      when "ERROR"
+        line = line.red
+      when "WARNING"
+        line = line.yellow
+      end
+    end
+
+    puts line
+  end
+end
+
+def find_latest_weekly
   Dir.entries("_weekly").reject do |entry|
     entry == "." || entry == ".."
   end.sort_by do |x|
@@ -207,12 +214,13 @@ end
 def import_articles_from_issues(issue_name)
   return false if issue_name.empty?
 
-  require "octokit"
-
   repo_name = "msbu-tech/weekly".freeze
   access_token = ENV["ACCESS_TOKEN"]
 
-  return false if access_token == nil || access_token.empty?
+  if access_token == nil || access_token.empty?
+    puts "[ERROR] No ACCESS_TOKEN is set.".red
+    return false
+  end
 
   client = Octokit::Client.new(:access_token => access_token)
 
@@ -239,16 +247,21 @@ def import_articles_from_issues(issue_name)
     body.split("\r\n").each_with_index do |line, i|
       case i
       when 0
-        title = line.strip.split("- ").at(1)
+        if !line.strip.eql?("/post")
+          puts "[INFO] Skip comment #{number}:#{item[:id]}".green
+          break
+        end
       when 1
-        link = line.strip.split("- ").at(1)
+        title = line.strip.split("- ").at(1)
       when 2
-        comment = line.strip.split("- ").at(1)
+        link = line.strip.split("- ").at(1)
       when 3
+        comment = line.strip.split("- ").at(1)
+      when 4
         tags = line.strip.split("- ").at(1)
+        articles << { :title => title, :link => link, :comment => comment, :tags => tags, :referrer => referrer }
       end
     end
-    articles << { :title => title, :link => link, :comment => comment, :tags => tags, :referrer => referrer }
   end
 
   articles
