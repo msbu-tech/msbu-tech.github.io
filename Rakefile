@@ -4,6 +4,7 @@ require "colorize"
 require "date"
 require "octokit"
 require "yaml"
+require "spacifier"
 
 task default: %w[serve]
 
@@ -252,11 +253,11 @@ def import_articles_from_issues(issue_name)
           break
         end
       when 1
-        title = line.strip.split("- ").at(1)
+        title = Spacifier.spacify(line.strip.split("- ").at(1))
       when 2
         link = line.strip.split("- ").at(1)
       when 3
-        comment = line.strip.split("- ").at(1)
+        comment = Spacifier.spacify(line.strip.split("- ").at(1))
       when 4
         tags = line.strip.split("- ").at(1)
         articles << { :title => title, :link => link, :comment => comment, :tags => tags, :referrer => referrer }
