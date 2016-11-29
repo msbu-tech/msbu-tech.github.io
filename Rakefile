@@ -169,6 +169,14 @@ task "edit-latest" do
   sh "$EDITOR _weekly/#{latest}"
 end
 
+desc "Open weekly issue"
+task :open, [:date] do |t, args|
+  args.with_defaults(:date => Time.now.strftime("%Y-%m-%d"))
+  weekly_date = args[:date]
+
+  open_issue(weekly_date)
+end
+
 desc "Publish weekly, close issues and say thanks to the contributors"
 task :publish, [:date] do |t, args|
   args.with_defaults(:date => "latest")
@@ -234,7 +242,7 @@ def import_articles_from_issues(issue_name)
   client = Octokit::Client.new(:access_token => access_token)
 
   # find issue
-  issues = client.list_issues(repo_name, options = {:state => "open", :labels => "收集中"})
+  issues = client.list_issues(repo_name, options = {:state => "open"})
   number = 0
   issues.each do |issue|
     if issue[:title].eql? issue_name
@@ -289,7 +297,7 @@ def say_thanks_and_close_issue(weekly_date)
 
   client = Octokit::Client.new(:access_token => access_token)
   # find issue
-  issues = client.list_issues(repo_name, options = {:state => "open", :labels => "收集中"})
+  issues = client.list_issues(repo_name, options = {:state => "open"})
   number = 0
   issues.each do |issue|
     if issue[:title].eql? issue_name
@@ -311,6 +319,22 @@ def say_thanks_and_close_issue(weekly_date)
   comment = "_MSBU Bot_: MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your contribution!"
   client.add_comment(repo_name, number, comment)
   client.close_issue(repo_name, number)
+
+  puts "Success."
+end
+
+def open_issue(weekly_date)
+  issue_name = "#{weekly_date} 文章收集"
+  repo_name = "msbu-tech/weekly".freeze
+  access_token = ENV["ACCESS_TOKEN"]
+
+  if access_token == nil || access_token.empty?
+    puts "[ERROR] No ACCESS_TOKEN is set.".red
+    return false
+  end
+
+  client = Octokit::Client.new(:access_token => access_token)
+  client.create_issue(repo_name, issue_name, "_MSBU Bot_: MSBU Weekly #{weekly_date} is now in collecting. Post your entry following the instruction of <https://github.com/msbu-tech/weekly#投稿>.")
 
   puts "Success."
 end
