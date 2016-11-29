@@ -31,15 +31,22 @@
   </div>
 </nav>
 <script>
-  function toggleDropdown() {
-    var menu = document.getElementById("menu");
+var isToggle = false;
+function toggleDropdown() {
+  var menu = document.getElementById("menu");
+  if (!isToggle) {
     menu.className = "dropdown-menu";
     menu.style.display = "block";
   }
-  window.onclick = function(event) {
-    if (!event.target.matches('menu')) {
-      var menu = document.getElementById("menu");
-      menu.style.display = "none";
-    }
+  else {
+    menu.style.display = "none";
   }
+  isToggle = !isToggle;
+}
+window.onclick = function(event) {
+  if (!event.target.matches('menu')) {
+    var menu = document.getElementById("menu");
+    menu.style.display = "none";
+  }
+}
 </script>
