@@ -20,8 +20,26 @@
         <a href="/about/">关于</a>
       </div>
     </div>
+    <div id="dropdown">
+      <a href="javascript:toggleDropdown()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
     <div id="head">
       🎄<a href="/">MSBU Tech</a>🎁
     </div>
   </div>
 </nav>
+<script>
+  function toggleDropdown() {
+    var menu = document.getElementById("menu");
+    menu.className = "dropdown-menu";
+    menu.style.display = "block";
+  }
+  window.onclick = function(event) {
+    if (!event.target.matches('menu')) {
+      var menu = document.getElementById("menu");
+      menu.style.display = "none";
+    }
+  }
+</script>

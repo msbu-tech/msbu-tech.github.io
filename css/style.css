@@ -49,6 +49,7 @@ nav{
   padding-top: 1.6rem;
   padding-bottom: 1rem;
   font-size: 1rem;
+  line-height: 1.25;
 }
 /* Menu */
 #head {
@@ -77,6 +78,20 @@ nav{
   color: #ffffff;
   text-decoration: none;
 }
+#dropdown {
+  display: none;
+}
+.dropdown-menu {
+  display: block;
+  position: fixed;
+  background-color: #393c40;
+  top: 3rem;
+  right: 0;
+  padding-top: 1rem;
+  padding-right: .8rem;
+  padding-bottom: .4rem;
+  border-radius: .2rem;
+}
 @media (max-width: 48rem) {
   nav {
     display: block;
@@ -87,8 +102,11 @@ nav{
     margin-bottom: .2rem;
   }
   #menu {
-    display: flex;
-    justify-content: space-around;
+    display: none;
+  }
+  #dropdown {
+    display: block;
+    float: right;
   }
 }
 #content {
