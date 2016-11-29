@@ -12,7 +12,7 @@
         {
           "id": "{{ forloop.index }}",
           "title": "{{ article.title | escape_once }}",
-          "link": "{{ article.link | escape_once }}",
+          "link": "{{ article.link | uri_escape }}",
           "comment": "{{ article.comment | escape_once }}",
           "tags": [{% for tag in article.tags %}"{{ tag | escape_once }}"{% if forloop.last == false %}, {% endif %}{% endfor %}]
         }{% if forloop.last == false %},{% endif %}{% endfor %}
