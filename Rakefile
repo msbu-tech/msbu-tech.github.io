@@ -314,7 +314,9 @@ def say_thanks_and_close_issue(weekly_date)
   end
   contributors_list = []
   contributors.each_key do |key|
-    contributors_list << "@#{key}"  
+    if item[:body].strip.start_with?("/post")
+      contributors_list << "@#{key}"
+    end
   end
   comment = "_MSBU Bot_: MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your contribution!"
   client.add_comment(repo_name, number, comment)
