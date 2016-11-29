@@ -310,13 +310,13 @@ def say_thanks_and_close_issue(weekly_date)
   # collect contributors
   contributors = Hash.new
   issue_comment.each do |item|
-    contributors[item[:user][:login]] = 1
+    if item[:body].strip.start_with?("/post")
+      contributors[item[:user][:login]] = 1
+    end
   end
   contributors_list = []
   contributors.each_key do |key|
-    if item[:body].strip.start_with?("/post")
-      contributors_list << "@#{key}"
-    end
+    contributors_list << "@#{key}"
   end
   comment = "Congratulations!\nMSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your great contribution!"
   client.add_comment(repo_name, number, comment)
