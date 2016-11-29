@@ -190,7 +190,6 @@ def show_message_on_article(level, message, article, highlight_item)
       "      Tags: #{article[:tags]}"
     end
 
-
     if key == highlight_item
       case level
       when "ERROR"
