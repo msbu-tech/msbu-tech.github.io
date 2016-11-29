@@ -318,7 +318,7 @@ def say_thanks_and_close_issue(weekly_date)
       contributors_list << "@#{key}"
     end
   end
-  comment = "MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your contribution!"
+  comment = "Congratulations!\nMSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your great contribution!"
   client.add_comment(repo_name, number, comment)
   client.close_issue(repo_name, number)
 
