@@ -169,6 +169,15 @@ task "edit-latest" do
   sh "$EDITOR _weekly/#{latest}"
 end
 
+desc "Publish weekly, close issues and say thanks to the contributors"
+task :publish, [:date] do |t, args|
+  args.with_defaults(:date => "latest")
+  weekly_date = args[:date]
+  weekly_date = find_latest_weekly.split("-weekly.md").at(0) if weekly_date == "latest"
+
+  say_thanks_and_close_issue(weekly_date)
+end
+
 def show_message_on_article(level, message, article, highlight_item)
   puts "[#{level}] #{message.capitalize}:"
 
@@ -266,4 +275,42 @@ def import_articles_from_issues(issue_name)
 
   puts "[INFO] Import #{articles.count} article(s)".green
   articles
+end
+
+def say_thanks_and_close_issue(weekly_date)
+  issue_name = "#{weekly_date} 文章收集"
+  repo_name = "msbu-tech/weekly".freeze
+  access_token = ENV["ACCESS_TOKEN"]
+
+  if access_token == nil || access_token.empty?
+    puts "[ERROR] No ACCESS_TOKEN is set.".red
+    return false
+  end
+
+  client = Octokit::Client.new(:access_token => access_token)
+  # find issue
+  issues = client.list_issues(repo_name, options = {:state => "open", :labels => "收集中"})
+  number = 0
+  issues.each do |issue|
+    if issue[:title].eql? issue_name
+      number = issue[:number]
+      break
+    end
+  end
+  # fetch issue comment
+  issue_comment = client.issue_comments(repo_name, number)
+  # collect contributors
+  contributors = Hash.new
+  issue_comment.each do |item|
+    contributors[item[:user][:login]] = 1
+  end
+  contributors_list = []
+  contributors.each_key do |key|
+    contributors_list << "@#{key}"  
+  end
+  comment = "_MSBU Bot_: MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your contribution!"
+  client.add_comment(repo_name, number, comment)
+  client.close_issue(repo_name, number)
+
+  puts "Success."
 end
