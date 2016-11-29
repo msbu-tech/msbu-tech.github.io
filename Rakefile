@@ -318,7 +318,7 @@ def say_thanks_and_close_issue(weekly_date)
       contributors_list << "@#{key}"
     end
   end
-  comment = "_MSBU Bot_: MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your contribution!"
+  comment = "MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your contribution!"
   client.add_comment(repo_name, number, comment)
   client.close_issue(repo_name, number)
 
@@ -336,7 +336,7 @@ def open_issue(weekly_date)
   end
 
   client = Octokit::Client.new(:access_token => access_token)
-  client.create_issue(repo_name, issue_name, "_MSBU Bot_: MSBU Weekly #{weekly_date} is now in collecting. Post your entry following the instruction of <https://github.com/msbu-tech/weekly#投稿>.")
+  client.create_issue(repo_name, issue_name, "MSBU Weekly #{weekly_date} is now in collecting. Post your entry following the instruction of <https://github.com/msbu-tech/weekly#投稿>.")
 
   puts "Success."
 end
