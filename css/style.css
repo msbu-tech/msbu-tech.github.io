@@ -268,3 +268,6 @@ footer {
 .warning {
   background-color: #e95260;
 }
+img {
+  max-width: 100%;
+}
