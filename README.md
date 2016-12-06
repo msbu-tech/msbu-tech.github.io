@@ -2,6 +2,7 @@
 
 [![](https://img.shields.io/badge/powered%20by-jekyll-red.svg)](https://jekyllrb.com)
 [![](https://api.travis-ci.org/msbu-tech/msbu-tech.github.io.svg)](https://travis-ci.org/msbu-tech/msbu-tech.github.io)
+![](https://stars-badge.herokuapp.com/msbu-tech/msbu-tech.github.io/stars.svg)
 
 MSBU Tech 团队 GitHub 官方首页。
 
