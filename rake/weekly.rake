@@ -81,14 +81,8 @@ def import_articles_from_issues(issue_name)
   return false if issue_name.empty?
 
   repo_name = "msbu-tech/weekly".freeze
-  access_token = ENV["ACCESS_TOKEN"]
 
-  if access_token == nil || access_token.empty?
-    puts "[ERROR] No ACCESS_TOKEN is set.".red
-    return false
-  end
-
-  client = Octokit::Client.new(:access_token => access_token)
+  client = Octokit::Client.new(:access_token => get_access_token)
 
   # find issue
   issues = client.list_issues(repo_name, options = {:state => "open"})
@@ -137,14 +131,8 @@ end
 def say_thanks_and_close_issue(weekly_date)
   issue_name = "#{weekly_date} 文章收集"
   repo_name = "msbu-tech/weekly".freeze
-  access_token = ENV["ACCESS_TOKEN"]
 
-  if access_token == nil || access_token.empty?
-    puts "[ERROR] No ACCESS_TOKEN is set.".red
-    return false
-  end
-
-  client = Octokit::Client.new(:access_token => access_token)
+  client = Octokit::Client.new(:access_token => get_access_token)
   # find issue
   issues = client.list_issues(repo_name, options = {:state => "open"})
   number = 0
@@ -182,14 +170,8 @@ end
 def open_issue(weekly_date)
   issue_name = "#{weekly_date} 文章收集"
   repo_name = "msbu-tech/weekly".freeze
-  access_token = ENV["ACCESS_TOKEN"]
 
-  if access_token == nil || access_token.empty?
-    puts "[ERROR] No ACCESS_TOKEN is set.".red
-    return false
-  end
-
-  client = Octokit::Client.new(:access_token => access_token)
+  client = Octokit::Client.new(:access_token => get_access_token)
   client.create_issue(repo_name, issue_name, "MSBU Weekly #{weekly_date} is now in collecting. Post your entry following the instruction of <https://github.com/msbu-tech/weekly#投稿>.")
 
   puts "Success."

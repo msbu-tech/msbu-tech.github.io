@@ -150,3 +150,14 @@ def find_latest_weekly
     Date.strptime(x.split("-weekly.md").at(0), "%Y-%m-%d").to_time.to_i
   end.last
 end
+
+def get_access_token
+  access_token = ENV["ACCESS_TOKEN"]
+
+  if access_token == nil || access_token.empty?
+    puts "[ERROR] No ACCESS_TOKEN is set.".red
+    return false
+  end
+
+  access_token
+end
