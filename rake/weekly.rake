@@ -1,3 +1,5 @@
+# coding: utf-8
+
 namespace :weekly do
   desc "Create weekly with scaffold"
   task :create, [:date] do |t, args|
