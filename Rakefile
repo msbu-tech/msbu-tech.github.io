@@ -321,6 +321,11 @@ def say_thanks_and_close_issue(weekly_date)
   comment = "Congratulations!\nMSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your great contribution!"
   client.add_comment(repo_name, number, comment)
   client.close_issue(repo_name, number)
+  # commit
+  msg = "Weekly #{weekly_date} published"
+  sh "git add ."
+  sh "git commit -m #{msg}"
+  sh "git push"
 
   puts "Success."
 end
