@@ -25,3 +25,4 @@ exclude:
   - Rakefile
   - LICENSE
   - README.md
+  - /rake
