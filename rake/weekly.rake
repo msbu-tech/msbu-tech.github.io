@@ -5,10 +5,6 @@ namespace :weekly do
   task :create, [:date] do |t, args|
     args.with_defaults(:date => Time.now.strftime("%Y-%m-%d"))
     weekly_date = args[:date]
-    weekly_html_file = "_weekly/#{weekly_date}-weekly.md"
-    weekly_email_file = "_newsletter/#{weekly_date}-weekly-email.md"
-
-    weekly_frontmatter = "---\ndatasrc: #{weekly_date}-weekly\n---"
     weekly_content = <<-EOF
 ---
 articles:
@@ -20,8 +16,7 @@ articles:
 ---
     EOF
 
-    File.new(weekly_html_file, "w").syswrite(weekly_content)
-    File.new(weekly_email_file, "w").syswrite(weekly_content)
+    create_weekly(weekly_date, weekly_content)
   end
 
   desc "Open weekly issue"
@@ -45,14 +40,13 @@ articles:
   task :import, [:date] do |t, args|
     args.with_defaults(:date => Time.now.strftime("%Y-%m-%d"))
     weekly_date = args[:date]
-    weekly_html_file = "_weekly/#{weekly_date}-weekly.md"
-    weekly_email_file = "_newsletter/#{weekly_date}-weekly-email.md"
     # do import from github issues
     articles = import_articles_from_issues("#{weekly_date} 文章收集")
     if articles == false
       puts "[ERROR] Import articles error!".red
       exit 1
     end
+    # build frontmatter
     weekly_content = "---\narticles:\n"
     articles.each do |item|
       weekly_content << "  - title:    \"#{item[:title]}\"\n"
@@ -66,10 +60,8 @@ articles:
       weekly_content << "    tags:    [#{tags.join(", ")}]\n"
     end
     weekly_content << "---\n"
-    weekly_frontmatter = "---\ndatasrc: #{weekly_date}-weekly\n---"
 
-    File.new(weekly_html_file, "w").syswrite(weekly_content)
-    File.new(weekly_email_file, "w").syswrite(weekly_frontmatter)
+    create_weekly(weekly_date, weekly_content)
   end
 
   desc "Edit the latest weekly"
@@ -77,6 +69,18 @@ articles:
     latest = find_latest_weekly
     sh "$EDITOR _weekly/#{latest}"
   end
+end
+
+def create_weekly(weekly_date, weekly_content)
+  html_file = "_weekly/#{weekly_date}-weekly.md"
+  email_file = "_newsletter/#{weekly_date}-weekly-email.md"
+  email_content = "---\ndatasrc: #{weekly_date}-weekly\n---"
+
+  File.new(html_file, "w").syswrite(weekly_content)
+  File.new(email_file, "w").syswrite(email_content)
+
+  show_info("#{html_file} is created.")
+  show_info("#{email_file} is created.")
 end
 
 def import_articles_from_issues(issue_name)
@@ -126,7 +130,7 @@ def import_articles_from_issues(issue_name)
     end
   end
 
-  puts "[INFO] Import #{articles.count} article(s)".green
+  show_info("Import #{articles.count} article(s).")
   articles
 end
 
@@ -166,7 +170,7 @@ def say_thanks_and_close_issue(weekly_date)
   sh "git commit -m #{msg}"
   sh "git push"
 
-  puts "Success."
+  show_success
 end
 
 def open_issue(weekly_date)
@@ -176,5 +180,5 @@ def open_issue(weekly_date)
   client = Octokit::Client.new(:access_token => get_access_token)
   client.create_issue(repo_name, issue_name, "MSBU Weekly #{weekly_date} is now in collecting. Post your entry following the instruction of <https://github.com/msbu-tech/weekly#投稿>.")
 
-  puts "Success."
+  show_success
 end

@@ -15,6 +15,14 @@ task :serve do
   sh "bundle exec jekyll serve --future"
 end
 
+def show_success
+  show_info("Success.")
+end
+
+def show_info(message)
+  puts "[INFO] #{message}".green
+end
+
 def show_message_on_article(level, message, article, highlight_item)
   puts "[#{level}] #{message.capitalize}:"
 
