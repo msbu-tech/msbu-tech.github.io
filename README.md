@@ -56,7 +56,7 @@ _newsletter/
 编辑可以自行根据格式创建博客或者周刊。为了方便编辑的工作，我们提供了 `rake` 来快速创建新周刊。只需要运行：
 
 ```
-$ rake weekly
+$ rake weekly:create
 ```
 
 就会根据当前时间创建如下周刊所需的文件：
@@ -69,13 +69,13 @@ _newsletter/2016-10-09-weekly-email.md
 如果需要指定时间，可以使用参数：
 
 ```
-$ rake weekly[2016-10-09]
+$ rake weekly:create[2016-10-09]
 ```
 
 对于 `zsh` 用户，需要转义：
 
 ```
-$ rake weekly\[2016-10-09\]
+$ rake weekly:create\[2016-10-09\]
 ```
 
 ### 导入 GitHub Issues 中的周刊
@@ -83,7 +83,7 @@ $ rake weekly\[2016-10-09\]
 如果已经在 [msbu-tech/weekly](https://github.com/msbu-tech/weekly) 中创建好 Issue，可以直接创建并导入周刊文章：
 
 ```
-$ ACCESS_TOKEN=your-access-token-here rake weekly[2016-10-09,true]
+$ ACCESS_TOKEN=your-access-token-here rake weekly:import[2016-10-09]
 ```
 
 ### 编辑周刊
@@ -93,13 +93,13 @@ $ ACCESS_TOKEN=your-access-token-here rake weekly[2016-10-09,true]
 一般情况下，我们都是编辑最新一期周刊的内容。为了方便，我们提供了一个指令用默认编辑器打开最新一期周刊：
 
 ```
-$ rake edit-latest
+$ rake weekly:edit-latest
 ```
 
 它会自动调用环境变量中的 `$EDITOR`，如果不想用环境变量中的编辑器，可以手动传入：
 
 ```
-$ EDITOR=atom rake edit-latest
+$ EDITOR=atom rake weekly:edit-latest
 ```
 
 周刊 yaml 格式约定如下：
@@ -143,6 +143,12 @@ $ rake test-weekly[latest]
 ```
 
 如果返回“Success.”，则证明检测通过，可以发布。
+
+### 发布周刊
+
+```
+$ ACCESS_TOKEN=your-access-token-here rake weekly:publish[2016-10-09]
+```
 
 ## 对于设计者
 
