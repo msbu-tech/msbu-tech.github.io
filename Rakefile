@@ -6,6 +6,8 @@ require "octokit"
 require "yaml"
 require "spacifier"
 
+$weekly_repo = "msbu-tech/weekly".freeze
+
 Dir.glob('rake/**.rake').each { |f| import f }
 
 task default: %w[serve]

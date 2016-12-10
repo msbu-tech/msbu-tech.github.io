@@ -41,7 +41,7 @@ articles:
     args.with_defaults(:date => Time.now.strftime("%Y-%m-%d"))
     weekly_date = args[:date]
     # do import from github issues
-    articles = import_articles_from_issues("#{weekly_date} 文章收集")
+    articles = import_articles_from_issues(get_issue_name(weekly_date))
     if articles == false
       puts "[ERROR] Import articles error!".red
       exit 1
@@ -71,9 +71,13 @@ articles:
   end
 end
 
+def get_issue_name(weekly_date)
+  "#{weekly_date} 文章收集"
+end
+
 def create_weekly(weekly_date, weekly_content)
   html_file = "_weekly/#{weekly_date}-weekly.md"
-  email_file = "_newsletter/#{weekly_date}-weekly-email.md"
+  email_file = "_newsletter/#{weekly_date}-weekly.md"
   email_content = "---\ndatasrc: #{weekly_date}-weekly\n---"
 
   File.new(html_file, "w").syswrite(weekly_content)
@@ -85,13 +89,9 @@ end
 
 def import_articles_from_issues(issue_name)
   return false if issue_name.empty?
-
-  repo_name = "msbu-tech/weekly".freeze
-
   client = Octokit::Client.new(:access_token => get_access_token)
-
   # find issue
-  issues = client.list_issues(repo_name, options = {:state => "open"})
+  issues = client.list_issues($weekly_repo, options = {:state => "open"})
   number = 0
   issues.each do |issue|
     if issue[:title].eql? issue_name
@@ -100,7 +100,7 @@ def import_articles_from_issues(issue_name)
     end
   end
   # fetch issue comment
-  issue_comment = client.issue_comments(repo_name, number)
+  issue_comment = client.issue_comments($weekly_repo, number)
   # iterate issue comment to import articles
   articles = Array.new
   issue_comment.each do |item|
@@ -135,21 +135,18 @@ def import_articles_from_issues(issue_name)
 end
 
 def say_thanks_and_close_issue(weekly_date)
-  issue_name = "#{weekly_date} 文章收集"
-  repo_name = "msbu-tech/weekly".freeze
-
   client = Octokit::Client.new(:access_token => get_access_token)
   # find issue
-  issues = client.list_issues(repo_name, options = {:state => "open"})
+  issues = client.list_issues($weekly_repo, options = {:state => "open"})
   number = 0
   issues.each do |issue|
-    if issue[:title].eql? issue_name
+    if issue[:title].eql? get_issue_name(weekly_date)
       number = issue[:number]
       break
     end
   end
   # fetch issue comment
-  issue_comment = client.issue_comments(repo_name, number)
+  issue_comment = client.issue_comments($weekly_repo, number)
   # collect contributors
   contributors = Hash.new
   issue_comment.each do |item|
@@ -161,9 +158,13 @@ def say_thanks_and_close_issue(weekly_date)
   contributors.each_key do |key|
     contributors_list << "@#{key}"
   end
-  comment = "Congratulations!\nMSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>!\nThanks #{contributors_list.join ', '} for your great contribution!"
-  client.add_comment(repo_name, number, comment)
-  client.close_issue(repo_name, number)
+  comment = <<-EOS
+Congratulations!
+MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>.
+Thanks #{contributors_list.join ', '} for your great contributions!
+  EOS
+  client.add_comment($weekly_repo, number, comment)
+  client.close_issue($weekly_repo, number)
   # commit
   msg = "Weekly #{weekly_date} published"
   sh "git add ."
@@ -174,11 +175,12 @@ def say_thanks_and_close_issue(weekly_date)
 end
 
 def open_issue(weekly_date)
-  issue_name = "#{weekly_date} 文章收集"
-  repo_name = "msbu-tech/weekly".freeze
-
   client = Octokit::Client.new(:access_token => get_access_token)
-  client.create_issue(repo_name, issue_name, "MSBU Weekly #{weekly_date} is now in collecting. Post your entry following the instruction of <https://github.com/msbu-tech/weekly#投稿>.")
+  content = <<-EOS
+MSBU Weekly #{weekly_date} is now in collecting.
+Post your entry following the instruction of <https://github.com/msbu-tech/weekly#投稿>.
+  EOS
+  client.create_issue($weekly_repo, get_issue_name(weekly_date), content)
 
   show_success
 end
