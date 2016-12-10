@@ -271,3 +271,18 @@ footer {
 img {
   max-width: 100%;
 }
+.hidden-newsletter {
+  text-align: center;
+  color: #f0f1f2;
+}
+.hidden-newsletter a {
+  color: #f0f1f2;
+}
+.hidden-newsletter a:hover {
+  color: #393c40;
+}
+@media (max-width: 48rem) {
+  .hidden-newsletter {
+    display: none;
+  }
+}
