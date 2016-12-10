@@ -6,9 +6,10 @@
 
 MSBU Tech 团队 GitHub 官方首页。
 
-## 我想提交周刊
+## 我想给周刊投稿
 
-[欢迎提交到最新的内容收集 Issue 中](https://github.com/msbu-tech/weekly/issues?q=is%3Aissue+is%3Aopen+label%3A%E6%94%B6%E9%9B%86%E4%B8%AD)。
+* [投稿前必读](https://github.com/msbu-tech/weekly#投稿)
+* [投稿快捷通道](https://github.com/msbu-tech/weekly/issues)
 
 ## 安装
 
