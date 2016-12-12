@@ -159,8 +159,8 @@ def say_thanks_and_close_issue(weekly_date)
     contributors_list << "@#{key}"
   end
   comment = <<-EOS
-Congratulations!
-MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>.
+:fireworks:Congratulations!
+:scroll:MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>.
 Thanks #{contributors_list.join ', '} for your great contributions!
   EOS
   client.add_comment($weekly_repo, number, comment)
@@ -177,7 +177,7 @@ end
 def open_issue(weekly_date)
   client = Octokit::Client.new(:access_token => get_access_token)
   content = <<-EOS
-MSBU Weekly #{weekly_date} is now in collecting.
+:loud_sound:MSBU Weekly #{weekly_date} is now in collecting.
 Post your entry following the instruction of <https://github.com/msbu-tech/weekly#投稿>.
   EOS
   client.create_issue($weekly_repo, get_issue_name(weekly_date), content)

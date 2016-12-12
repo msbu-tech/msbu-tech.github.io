@@ -5,6 +5,7 @@ require "date"
 require "octokit"
 require "yaml"
 require "spacifier"
+require "terminal-table"
 
 $weekly_repo = "msbu-tech/weekly".freeze
 
