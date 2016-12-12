@@ -7,17 +7,24 @@ namespace :rank do
   end
 
   desc "Annually ranking list"
-  task :annually do
-    announce_locally(stat_ranking(2016), "Annually Ranking List")
+  task :annually, [:year] do |t, args|
+    args.with_defaults(:year => Time.now.strftime("%Y"))
+    year = args[:year]
+    announce_locally(stat_ranking(year), "Annually Ranking List of #{year}")
   end
 
   desc "Monthly ranking list"
-  task :monthly do
-    announce_locally(stat_ranking(2016, 12), "Monthly Ranking List")
-  end
+  task :monthly, [:month, :github] do |t, args|
+    args.with_defaults(:month => Time.now.strftime("%m"))
+    args.with_defaults(:github => false)
+    month = args[:month]
+    github = args[:github]
+    year = Time.now.strftime("%Y")
+    announce_locally(stat_ranking(year, month), "Monthly Ranking List of #{year}-#{month}")
 
-  desc "Announce ranking list to issue"
-  task :announce do
+    if github == "true"
+      announce_on_github(stat_ranking(year, month), "Ranking List of #{year}-#{month}")
+    end
   end
 end
 
@@ -67,5 +74,19 @@ def announce_locally(ranking_list, title)
 end
 
 def announce_on_github(ranking_list, title)
-  puts "#{checkered_flag} Ranking List"
+  content =<<-EOB
+:checkered_flag::checkered_flag::checkered_flag:
+
+| Name | Count |
+|---|---|
+  EOB
+
+  ranking_list.each do |name, count|
+    content << "| #{name} | #{count} |\n"
+  end
+
+  client = Octokit::Client.new(:access_token => get_access_token)
+  client.create_issue($weekly_repo, title, content)
+
+  show_success
 end
