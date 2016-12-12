@@ -3,17 +3,17 @@
 namespace :rank do
   desc "Ranking list of all time"
   task :all do
-  	announce_locally(stat_ranking, "All-time")
+    announce_locally(stat_ranking, "Ranking list of all time")
   end
 
   desc "Annually ranking list"
   task :annually do
-  	announce_locally(stat_ranking(2016), "Annually")
+    announce_locally(stat_ranking(2016), "Annually Ranking List")
   end
 
   desc "Monthly ranking list"
   task :monthly do
-  	announce_locally(stat_ranking(2016, 12), "Monthly")
+    announce_locally(stat_ranking(2016, 12), "Monthly Ranking List")
   end
 
   desc "Announce ranking list to issue"
@@ -50,14 +50,20 @@ def stat_ranking(year = nil, month = nil)
     end
   end
 
-  ranking_list
+  ranking_list.sort_by do |name, count|
+    count
+  end.reverse
 end
 
 def announce_locally(ranking_list, title)
-  puts "#{title} Ranking List"
+  headings = ["Name", "Count"]
+  rows = []
   ranking_list.each do |name, count|
-    puts "#{name}: #{count}"
+    rows << [name, count]
   end
+
+  table = Terminal::Table.new :title => title, :headings => headings, :rows => rows
+  puts table
 end
 
 def announce_on_github(ranking_list, title)

@@ -10,4 +10,5 @@ group :rake do
   gem "colorize"
   gem "octokit", "~> 4.0"
   gem "spacifier"
+  gem "terminal-table"
 end
