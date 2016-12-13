@@ -168,7 +168,7 @@ Thanks #{contributors_list.join ', '} for your great contributions!
   # commit
   msg = "Weekly #{weekly_date} published"
   sh "git add ."
-  sh "git commit -m #{msg}"
+  sh "git commit -m \"#{msg}\""
   sh "git push"
 
   show_success
