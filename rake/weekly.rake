@@ -91,7 +91,7 @@ def import_articles_from_issues(issue_name)
   return false if issue_name.empty?
   client = Octokit::Client.new(:access_token => get_access_token)
   # find issue
-  issues = client.list_issues($weekly_repo, options = {:state => "open"})
+  issues = client.list_issues(get_weekly_repo, options = {:state => "open"})
   number = 0
   issues.each do |issue|
     if issue[:title].eql? issue_name
@@ -100,7 +100,7 @@ def import_articles_from_issues(issue_name)
     end
   end
   # fetch issue comment
-  issue_comment = client.issue_comments($weekly_repo, number)
+  issue_comment = client.issue_comments(get_weekly_repo, number)
   # iterate issue comment to import articles
   articles = Array.new
   issue_comment.each do |item|
@@ -137,7 +137,7 @@ end
 def say_thanks_and_close_issue(weekly_date)
   client = Octokit::Client.new(:access_token => get_access_token)
   # find issue
-  issues = client.list_issues($weekly_repo, options = {:state => "open"})
+  issues = client.list_issues(get_weekly_repo, options = {:state => "open"})
   number = 0
   issues.each do |issue|
     if issue[:title].eql? get_issue_name(weekly_date)
@@ -146,7 +146,7 @@ def say_thanks_and_close_issue(weekly_date)
     end
   end
   # fetch issue comment
-  issue_comment = client.issue_comments($weekly_repo, number)
+  issue_comment = client.issue_comments(get_weekly_repo, number)
   # collect contributors
   contributors = Hash.new
   issue_comment.each do |item|
@@ -163,8 +163,8 @@ def say_thanks_and_close_issue(weekly_date)
 :scroll:MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>.
 Thanks #{contributors_list.join ', '} for your great contributions!
   EOS
-  client.add_comment($weekly_repo, number, comment)
-  client.close_issue($weekly_repo, number)
+  client.add_comment(get_weekly_repo, number, comment)
+  client.close_issue(get_weekly_repo, number)
   # commit
   msg = "Weekly #{weekly_date} published"
   sh "git add ."
@@ -180,7 +180,7 @@ def open_issue(weekly_date)
 :loud_sound:MSBU Weekly #{weekly_date} is now in collecting.
 Post your entry following the instruction of <https://github.com/msbu-tech/weekly#投稿>.
   EOS
-  client.create_issue($weekly_repo, get_issue_name(weekly_date), content)
+  client.create_issue(get_weekly_repo, get_issue_name(weekly_date), content)
 
   show_success
 end

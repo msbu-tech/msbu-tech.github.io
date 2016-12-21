@@ -7,15 +7,8 @@ require "yaml"
 require "spacifier"
 require "terminal-table"
 
-$weekly_repo = "msbu-tech/weekly".freeze
-
-Dir.glob('rake/**.rake').each { |f| import f }
-
-task default: %w[serve]
-
-desc "Serve simply"
-task :serve do
-  sh "bundle exec jekyll serve --future"
+Dir.glob('rake/**.rake').each do |f|
+  import f
 end
 
 def show_success
@@ -77,4 +70,8 @@ def get_access_token
   end
 
   access_token
+end
+
+def get_weekly_repo
+  "msbu-tech/weekly".freeze
 end

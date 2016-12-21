@@ -86,7 +86,7 @@ def announce_on_github(ranking_list, title)
   end
 
   client = Octokit::Client.new(:access_token => get_access_token)
-  client.create_issue($weekly_repo, title, content)
+  client.create_issue(get_weekly_repo, title, content)
 
   show_success
 end
