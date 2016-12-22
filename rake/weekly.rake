@@ -161,7 +161,7 @@ def say_thanks_and_close_issue(weekly_date)
   comment = <<-EOS
 :fireworks:Congratulations!
 :scroll:MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>.
-Thanks #{contributors_list.join ', '} for your great contributions!
+:thumbsup:Thanks #{contributors_list.join ', '} for your great contributions!
   EOS
   client.add_comment(get_weekly_repo, number, comment)
   client.close_issue(get_weekly_repo, number)
