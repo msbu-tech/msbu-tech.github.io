@@ -1,0 +1,8 @@
+---
+---
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url({{ site.baseurl }}/assets/css/opensans.woff) format('woff');
+}
