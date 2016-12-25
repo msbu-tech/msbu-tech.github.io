@@ -1,10 +1,18 @@
-# [msbu-tech.github.io](https://msbu-tech.github.io/)
+<p align="center">
+  <a href="https://msbu-tech.github.io/">
+    <h1>MSBU Tech 团队首页</h1>
+  </a>
+</p>
 
-[![](https://img.shields.io/badge/powered%20by-jekyll-red.svg)](https://jekyllrb.com)
-[![](https://api.travis-ci.org/msbu-tech/msbu-tech.github.io.svg)](https://travis-ci.org/msbu-tech/msbu-tech.github.io)
-![](https://stars-badge.herokuapp.com/msbu-tech/msbu-tech.github.io/last-pages-build.svg)
-
-MSBU Tech 团队 GitHub 官方首页。
+<p align="center">
+  <a href="https://jekyllrb.com">
+    <img src="https://img.shields.io/badge/powered%20by-jekyll-blue.svg">
+  </a>
+  <a href="https://travis-ci.org/msbu-tech/msbu-tech.github.io">
+    <img src="https://api.travis-ci.org/msbu-tech/msbu-tech.github.io.svg">
+  </a>
+  <img src="https://stars-badge.herokuapp.com/msbu-tech/msbu-tech.github.io/last-pages-build.svg">
+</p>
 
 ## 我想给周刊投稿
 
