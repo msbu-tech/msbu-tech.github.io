@@ -8,5 +8,9 @@ layout: default
 <a href="https://github.com/{{ page.author }}">{{ page.author }}</a>, {{ page.date | date:"%Y/%m/%d" }}
 </div>
 <div class="article">
+标签：
+{{ page.tags | join:", " }}
+</div>
+<div class="article">
   {{ content }}
 </div>
