@@ -4,10 +4,10 @@ title: 首页 | MSBU Tech
 type: index
 ---
 <div class="page-title">
-  周刊
+  <a href="/weekly/">周刊</a>
 </div>
 {% assign sorted_weekly = site.weekly | reverse %}
-{% for weekly in sorted_weekly limit: 6 %}
+{% for weekly in sorted_weekly limit:3 %}
 <div class="article">
   <div class="article-item">
     <div class="article-date">
@@ -23,28 +23,9 @@ type: index
 </div>
 {% endfor %}
 <div class="page-title">
-  分享
+  <a href="/blog/">博客</a>
 </div>
-{% assign sorted_share = site.data.share | reverse %}
-{% for share in sorted_share %}
-<div class="article">
-  <div class="article-item">
-    <div class="article-date">
-      {{ share.date }}
-    </div>
-    <div class="article-title">
-      <a href="{{ share.link }}" target="_blank">{{ share.title }}</a>
-    </div>
-    <div class="article-comment">
-      分享人: {{ share.person }}
-    </div>
-  </div>
-</div>
-{% endfor %}
-<div class="page-title">
-  博客
-</div>
-{% for post in site.posts limit:6 %}
+{% for post in site.posts limit:3 %}
 <div class="article">
   <div class="article-item">
     <div class="article-date">
@@ -60,7 +41,7 @@ type: index
 </div>
 {% endfor %}
 <div class="page-title">
-  项目
+  <a href="/project/">项目</a>
 </div>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 {% for project in site.data.project %}
@@ -80,6 +61,25 @@ type: index
     </div>
     <div class="article-main">
       {{ project.intro }}
+    </div>
+  </div>
+</div>
+{% endfor %}
+<div class="page-title">
+  <a href="/share/">分享</a>
+</div>
+{% assign sorted_share = site.data.share | reverse %}
+{% for share in sorted_share limit:3 %}
+<div class="article">
+  <div class="article-item">
+    <div class="article-date">
+      {{ share.date }}
+    </div>
+    <div class="article-title">
+      <a href="{{ share.link }}" target="_blank">{{ share.title }}</a>
+    </div>
+    <div class="article-comment">
+      分享人: {{ share.person }}
     </div>
   </div>
 </div>

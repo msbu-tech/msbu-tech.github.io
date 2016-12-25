@@ -5,7 +5,7 @@ layout: default
 {{ page.title }}
 </div>
 <div class="page-date">
-{{ page.date | date:"%Y/%m/%d" }}
+<a href="https://github.com/{{ page.author }}">{{ page.author }}</a>, {{ page.date | date:"%Y/%m/%d" }}
 </div>
 <div class="article">
   {{ content }}

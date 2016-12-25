@@ -2,7 +2,8 @@
 layout: blog
 title: MSBU 业内技术周刊新投稿方式
 type: blog
-hightlight: true
+highlight: true
+author: crispgm
 ---
 
 MSBU 业内技术周刊自2016年9月6日创刊之后，已经发布了12期。之前的投稿采用 Issue 留言或直接联系编辑人员方式，内容采用人工编辑。为了降低编辑成本，我们推出了全新的自动化投稿方式。

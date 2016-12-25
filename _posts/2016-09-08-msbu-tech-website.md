@@ -2,6 +2,7 @@
 layout: blog
 title: MSBU Tech GitHub 官方首页发布
 type: blog
+author: crispgm
 ---
 
 MSBU Tech GitHub 官方首页发布，欢迎访问并收藏 <https://msbu-tech.github.io>
