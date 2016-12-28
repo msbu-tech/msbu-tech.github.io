@@ -33,6 +33,7 @@ GEM
     multipart-post (2.0.0)
     octokit (4.6.2)
       sawyer (~> 0.8.0, >= 0.5.3)
+    os (0.9.6)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.4)
@@ -58,6 +59,7 @@ DEPENDENCIES
   colorize
   jekyll
   octokit (~> 4.0)
+  os
   rake
   spacifier
   terminal-table
