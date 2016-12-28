@@ -51,6 +51,7 @@ GEM
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
     unicode-display_width (1.1.2)
+    wunderlist-api (0.2.5)
 
 PLATFORMS
   ruby
@@ -63,6 +64,7 @@ DEPENDENCIES
   rake
   spacifier
   terminal-table
+  wunderlist-api
 
 BUNDLED WITH
    1.13.6

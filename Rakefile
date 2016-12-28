@@ -7,6 +7,7 @@ require "yaml"
 require "os"
 require "spacifier"
 require "terminal-table"
+require "wunderlist"
 
 Dir.glob('rake/**.rake').each do |f|
   import f
