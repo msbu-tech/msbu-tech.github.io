@@ -179,7 +179,7 @@ def say_thanks_and_close_issue(weekly_date)
   # commit
   msg = "Weekly #{weekly_date} published"
   sh "git add ."
-  sh "git commit -m \"#{msg}\""
+  sh "git commit --allow-empty -m \"#{msg}\""
   sh "git push"
 
   show_success
