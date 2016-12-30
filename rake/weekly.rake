@@ -69,6 +69,17 @@ articles:
     latest = find_latest_weekly
     sh "$EDITOR _weekly/#{latest}"
   end
+
+  desc "Open the latet issue"
+  task "open-latest-issue" do
+    link = find_issue_link
+    if OS.mac?
+      sh "open #{link}"
+    else
+      puts link
+      raise StandardError, "Cannot open in non-mac system"
+    end
+  end
 end
 
 def get_issue_name(weekly_date)
@@ -183,4 +194,16 @@ Post your entry following the instruction of <https://github.com/msbu-tech/weekl
   client.create_issue(get_weekly_repo, get_issue_name(weekly_date), content)
 
   show_success
+end
+
+def find_issue_link()
+  client = Octokit::Client.new(:access_token => get_access_token)
+  # find issue
+  issues = client.list_issues(get_weekly_repo, options = {:state => "open"})
+  number = 0
+  issues.each do |issue|
+    number = issue[:number]
+    break
+  end
+  "https://github.com/#{get_weekly_repo}/issues/#{number}"
 end

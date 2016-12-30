@@ -4,6 +4,7 @@ require "colorize"
 require "date"
 require "octokit"
 require "yaml"
+require "os"
 require "spacifier"
 require "terminal-table"
 
