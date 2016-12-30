@@ -32,8 +32,16 @@ articles:
     args.with_defaults(:date => "latest")
     weekly_date = args[:date]
     weekly_date = find_latest_weekly.split("-weekly.md").at(0) if weekly_date == "latest"
-
+    show_info("Publishing")
+    # commit
+    msg = "Weekly #{weekly_date} published"
+    sh "git add ."
+    sh "git commit --allow-empty -m \"#{msg}\""
+    sh "git push"
+    # say thanks and close issue
     say_thanks_and_close_issue(weekly_date)
+    # complete wunderlist
+    complete_wunderlist(weekly_date)
   end
 
   desc "Import weekly articles"
@@ -174,13 +182,12 @@ def say_thanks_and_close_issue(weekly_date)
 :scroll:MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>.
 :thumbsup:Thanks #{contributors_list.join ', '} for your great contributions!
   EOS
+  # say thanks
   client.add_comment(get_weekly_repo, number, comment)
+  show_info("Saying thanks to contributors...")
+  # close issue
   client.close_issue(get_weekly_repo, number)
-  # commit
-  msg = "Weekly #{weekly_date} published"
-  sh "git add ."
-  sh "git commit --allow-empty -m \"#{msg}\""
-  sh "git push"
+  show_info("Closing issue...")
 
   show_success
 end
@@ -206,4 +213,23 @@ def find_issue_link()
     break
   end
   "https://github.com/#{get_weekly_repo}/issues/#{number}"
+end
+
+def complete_wunderlist(weekly_date)
+  wl = Wunderlist::API.new({
+    access_token: ENV["WLIST_ACCESS_TOKEN"],
+    client_id: ENV["WLIST_CLIENT_ID"]
+  })
+
+  tasks = wl.tasks(["⌨TECH工作清单"])
+  tasks.each do |t|
+    if t.title.eql?("MSBU Tech Weekly") && weekly_date.eql?(t.due_date)
+      t.completed = true
+      t.save
+      show_info("Completing wunderlist task...")
+      break
+    end
+  end
+
+  show_success
 end

@@ -12,4 +12,5 @@ group :rake do
   gem "os"
   gem "spacifier"
   gem "terminal-table"
+  gem "wunderlist-api"
 end
