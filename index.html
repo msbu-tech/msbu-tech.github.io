@@ -17,7 +17,13 @@ type: index
       <a href="{{ site.baseurl }}{{ weekly.url }}">
         业内技术周刊
       </a>
-      {{ weekly.articles | size }}
+    </div>
+    <div class="article-comment">
+      <ul>
+      {% for item in weekly.articles %}
+        <li>{{ item.title }}</li>
+      {% endfor %}
+      </ul>
     </div>
   </div>
 </div>
