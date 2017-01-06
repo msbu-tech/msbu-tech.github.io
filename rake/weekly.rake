@@ -129,7 +129,12 @@ def import_articles_from_issues(issue_name)
     comment = ""
     tags = Array.new
     referrer = item[:user][:login]
-    body.split("\r\n").each_with_index do |line, i|
+    i = 0
+    body.split("\r\n").each do |line|
+      if line.strip.empty?
+        next
+      end
+
       case i
       when 0
         if !line.strip.eql?("/post")
@@ -146,6 +151,8 @@ def import_articles_from_issues(issue_name)
         tags = line.strip.split("- ").at(1)
         articles << { :title => title, :link => link, :comment => comment, :tags => tags, :referrer => referrer }
       end
+
+      i = i + 1
     end
   end
 
