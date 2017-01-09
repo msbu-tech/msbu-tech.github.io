@@ -1,4 +1,4 @@
-# [msbu-tech.github.io](https://msbu-tech.github.io/)
+# [msbu.tech](http://msbu.tech)
 
 [![](https://img.shields.io/badge/powered%20by-jekyll-red.svg)](https://jekyllrb.com)
 [![](https://api.travis-ci.org/msbu-tech/msbu-tech.github.io.svg)](https://travis-ci.org/msbu-tech/msbu-tech.github.io)
