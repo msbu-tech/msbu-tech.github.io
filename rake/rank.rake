@@ -7,10 +7,16 @@ namespace :rank do
   end
 
   desc "Annually ranking list"
-  task :annually, [:year] do |t, args|
+  task :annually, [:year, :github] do |t, args|
     args.with_defaults(:year => Time.now.strftime("%Y"))
+    args.with_defaults(:github => false)
     year = args[:year]
+    github = args[:github]
     announce_locally(stat_ranking(year), "Annually Ranking List of #{year}")
+
+    if github == "true"
+      announce_on_github(stat_ranking(year), "Annually Ranking List of #{year}")
+    end
   end
 
   desc "Monthly ranking list"
@@ -86,11 +92,11 @@ def announce_on_github(ranking_list, title)
   ranking_list.each do |name, count|
     rank_emoji = case rank
     when 1
-      ":1st_place_medal"
+      ":1st_place_medal:"
     when 2
-      ":2nd_place_medal"
+      ":2nd_place_medal:"
     when 3
-      ":3rd_place_medal"
+      ":3rd_place_medal:"
     else
       ""
     end
