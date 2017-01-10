@@ -81,8 +81,22 @@ def announce_on_github(ranking_list, title)
 |---|---|
   EOB
 
+  rank = 1
+  rank_emoji = ""
   ranking_list.each do |name, count|
-    content << "| #{name} | #{count} |\n"
+    rank_emoji = case rank
+    when 1
+      ":1st_place_medal"
+    when 2
+      ":2nd_place_medal"
+    when 3
+      ":3rd_place_medal"
+    else
+      ""
+    end
+    rank = rank + 1
+    
+    content << "| #{rank_emoji}#{name} | #{count} |\n"
   end
 
   client = Octokit::Client.new(:access_token => get_access_token)
