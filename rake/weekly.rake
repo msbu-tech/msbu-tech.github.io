@@ -228,7 +228,7 @@ def complete_wunderlist(weekly_date)
     client_id: ENV["WLIST_CLIENT_ID"]
   })
 
-  tasks = wl.tasks(["⌨TECH工作清单"])
+  tasks = wl.tasks(["🗑Working"])
   tasks.each do |t|
     if t.title.eql?("MSBU Tech Weekly") && weekly_date.eql?(t.due_date)
       t.completed = true
