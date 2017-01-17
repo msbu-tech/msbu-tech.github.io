@@ -79,6 +79,12 @@ $ rake weekly:create[2016-10-09]
 $ rake weekly:create\[2016-10-09\]
 ```
 
+### 创建 GitHub Issues 周刊收集贴
+
+```
+$ ACCESS_TOKEN=your-access-token-here rake weekly:open[2016-10-09]
+```
+
 ### 导入 GitHub Issues 中的周刊
 
 如果已经在 [msbu-tech/weekly](https://github.com/msbu-tech/weekly) 中创建好 Issue，可以直接创建并导入周刊文章：
@@ -148,7 +154,7 @@ $ rake test-weekly[latest]
 ### 发布周刊
 
 ```
-$ ACCESS_TOKEN=your-access-token-here rake weekly:publish[2016-10-09]
+$ ACCESS_TOKEN=your-access-token-here WLIST_CLIENT_ID=your-wunderlist-client-id WLIST_ACCESS_TOKEN=your-wunderlist-access-token rake weekly:publish[2016-10-09]
 ```
 
 ## 对于设计者
