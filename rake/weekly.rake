@@ -184,9 +184,10 @@ def say_thanks_and_close_issue(weekly_date)
   contributors.each_key do |key|
     contributors_list << "@#{key}"
   end
+  url = weekly_url(weekly_date)
   comment = <<-EOS
 :fireworks:Congratulations!
-:scroll:MSBU Weekly #{weekly_date} is published on <https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html>.
+:scroll:MSBU Weekly #{weekly_date} is published on <#{url}>.
 :thumbsup:Thanks #{contributors_list.join ', '} for your great contributions!
   EOS
   # say thanks
@@ -210,7 +211,7 @@ Post your entry following the instruction of <https://github.com/msbu-tech/weekl
   show_success
 end
 
-def find_issue_link()
+def find_issue_link
   client = Octokit::Client.new(:access_token => get_access_token)
   # find issue
   issues = client.list_issues(get_weekly_repo, options = {:state => "open"})
@@ -222,6 +223,10 @@ def find_issue_link()
   "https://github.com/#{get_weekly_repo}/issues/#{number}"
 end
 
+def weekly_url(weekly_date)
+  "https://msbu-tech.github.io/weekly/#{weekly_date}-weekly.html"
+end
+
 def complete_wunderlist(weekly_date)
   wl = Wunderlist::API.new({
     access_token: ENV["WLIST_ACCESS_TOKEN"],
@@ -229,8 +234,10 @@ def complete_wunderlist(weekly_date)
   })
 
   tasks = wl.tasks(["🗑Working"])
+  url = weekly_url(weekly_date)
   tasks.each do |t|
     if t.title.eql?("MSBU Tech Weekly") && weekly_date.eql?(t.due_date)
+      t.note.content = "MSBU Weekly #{weekly_date} is published on <#{url}>."
       t.completed = true
       t.save
       show_info("Completing wunderlist task...")
