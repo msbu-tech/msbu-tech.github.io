@@ -1,3 +1,5 @@
 _site/
 gh-pages/
 Gemfile.lock
+vendor/
+.bundle/
