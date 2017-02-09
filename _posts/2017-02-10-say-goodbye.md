@@ -20,4 +20,8 @@ tags:
 
 后续，整个网站将不再维护，其中的项目可能也没有什么特别值得继续的。MSBU 业内技术周刊将会发布 [20170210 期最终刊](/weekly/2017-02-10-weekly.html)。
 
+MSBU Tech Final
+
+hanpeng03, zhangwanlong, hezhipeng, dengxi, liurenfei, jingchao, langjun, xuguohan
+
 ps：此处后续需要一张我们的合影。
