@@ -8,6 +8,10 @@ tags:
 - 关闭
 ---
 
+<p align="center">
+  <img src="/assets/images/msbu-funeral.png">
+</p>
+
 由于[公司的调整](http://tech.qq.com/a/20170209/022253.htm)，MSBU Tech 的命运走到了终点。在短暂的几个月时间内，我们这个全栈团队以小搏大，发挥着自己的技术能力也调动着整个团队的节奏。
 
 从全流程和服务化作为起点，逐渐加入了 ReactNative、反作弊、App 动态化、前端组件化等一系列项目。别的团队都是一个团队做的东西，我们可能是一两个人在负责。
