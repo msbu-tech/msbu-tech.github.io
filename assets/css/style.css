@@ -131,6 +131,9 @@ nav{
   background-color: #f7f8fa;
   box-shadow: 0 .1rem .4rem 0 #ddd;
 }
+.article:hover{
+  box-shadow:0 .1rem .4rem .1rem #ddd;
+}
 .article-item {
   /*margin-top: .5rem;*/
 }
