@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: MSBU Tech 宣布重生
+title: Happy April Fools' Day
 type: blog
 author: msbu-bot
 tags:
