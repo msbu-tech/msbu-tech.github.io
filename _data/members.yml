@@ -1,7 +1,9 @@
 - name: haharazer
   github: haharazer
+  homepage: http://blog.laiyifa.me/
 - name: David Zhang
   github: crispgm
+  homepage: https://crispgm.com/
 - name: 执毽人
   github: regrex
   homepage: https://regrex.github.io/
@@ -13,6 +15,7 @@
   homepage: http://bdapp.org/
 - name: EverThis
   github: everthis
+  homepage: https://www.everthis.com/
 - name: Richard Jing
   github: RichardJing
 - name: Lang Jun
