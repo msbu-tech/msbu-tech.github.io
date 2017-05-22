@@ -41,7 +41,7 @@ articles:
     # say thanks and close issue
     say_thanks_and_close_issue(weekly_date)
     # complete wunderlist
-    complete_wunderlist(weekly_date)
+    # complete_wunderlist(weekly_date)
   end
 
   desc "Import weekly articles"
