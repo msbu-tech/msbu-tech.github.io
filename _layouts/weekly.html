@@ -9,9 +9,6 @@ MSBU Tech 技术周刊
 </div>
 {% for article in page.articles %}
 <div id="A{{ forloop.index }}" class="article">
-  {% if article.referrer %}
-  <div class="article-referrer">{{ article.referrer}}</div>
-  {% endif %}
   <div class="article-title">
     <span{% if article.original == true %} title="原创" class="article-original"{% endif %}>
     {% if article.original == true %}
