@@ -12,7 +12,7 @@ html {
 }
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", "Microsoft Yahei",sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", Helvetica, Arial, "Open Sans", "Microsoft Yahei",sans-serif;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   color: #393c40;
@@ -130,6 +130,7 @@ nav{
   padding: 1rem;
   background-color: #f7f8fa;
   box-shadow: 0 .1rem .4rem 0 #ddd;
+  hyphens: auto;
 }
 .article:hover{
   box-shadow:0 .1rem .4rem .1rem #ddd;
@@ -288,4 +289,7 @@ img {
   .hidden-newsletter {
     display: none;
   }
+}
+ul li {
+  margin-left: -1rem;
 }
