@@ -22,7 +22,7 @@ type: weekly
     <div class="article-comment">
       <ul>
       {% for item in post.articles %}
-        <li>{{ item.title }}</li>
+        <li><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></li>
       {% endfor %}
       </ul>
     </div>

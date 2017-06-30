@@ -24,7 +24,7 @@ type: index
     <div class="article-comment">
       <ul>
       {% for item in weekly.articles %}
-        <li>{{ item.title }}</li>
+        <li><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></li>
       {% endfor %}
       </ul>
     </div>
